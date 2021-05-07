@@ -10,31 +10,14 @@
                 </tr>
             </thead>
                 <tbody>
-                    <tr>
-                        <td>Home</td>
-                        <td>Active</td>
+                    <tr *ngFor = "let item of data">
+                        <td>{{item.name}}</td>
+                      <td  *ngIf="item.active==0">InActive</td> 
+                      <td  *ngIf="item.active==1">Active</td> 
                         
+                      
                     </tr>
-                    <tr>
-                        <td>Services</td>
-                        <td>Active</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>Recent Works</td>
-                        <td>Active</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>Carrers</td>
-                        <td>Active</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>Contact Us</td>
-                        <td>Active</td>
-                        
-                    </tr>
+                    
                 </tbody>
             </table>
            
