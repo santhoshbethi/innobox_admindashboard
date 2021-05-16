@@ -1,60 +1,59 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient } from "@angular/common/http";
-
-
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
-
-import { AppComponent } from './app.component';
-
-// Import containers
-import { DefaultLayoutComponent } from './containers';
-
-import { P404Component } from './views/error/404.component';
-import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-
-const APP_CONTAINERS = [
-  DefaultLayoutComponent
-];
-
+import {
+  CommonModule,
+  HashLocationStrategy,
+  LocationStrategy,
+} from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   AppAsideModule,
   AppBreadcrumbModule,
-  AppHeaderModule,
   AppFooterModule,
+  AppHeaderModule,
   AppSidebarModule,
-} from '@coreui/angular';
-
-// Import routing module
-import { AppRoutingModule } from './app.routing';
-
+} from "@coreui/angular";
+import {
+  IconModule,
+  IconSetModule,
+  IconSetService,
+} from "@coreui/icons-angular";
+import { ChartsModule } from "ng2-charts";
 // Import 3rd party components
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ChartsModule } from 'ng2-charts';
-import { MenuComponent } from './views/menu/menu.component';
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+import { TabsModule } from "ngx-bootstrap/tabs";
+import {
+  PerfectScrollbarConfigInterface,
+  PerfectScrollbarModule,
+} from "ngx-perfect-scrollbar";
+import { AppComponent } from "./app.component";
+// Import routing module
+import { AppRoutingModule } from "./app.routing";
+// Import containers
+import { DefaultLayoutComponent } from "./containers";
+import { AddcareerComponent } from "./views/addcareer/addcareer.component";
+import { CareerComponent } from "./views/careers/careers.component";
+import { P404Component } from "./views/error/404.component";
+import { P500Component } from "./views/error/500.component";
+import { LoginComponent } from "./views/login/login.component";
+import { MenuComponent } from "./views/menu/menu.component";
+import { RegisterComponent } from "./views/register/register.component";
+import { TableComponent } from "./views/table/table.component";
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+};
+
+const APP_CONTAINERS = [DefaultLayoutComponent];
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    CommonModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,
@@ -65,9 +64,10 @@ import { MenuComponent } from './views/menu/menu.component';
     TabsModule.forRoot(),
     ChartsModule,
     IconModule,
+    FormsModule,
+    ReactiveFormsModule,
     IconSetModule.forRoot(),
-    HttpClientModule
-    
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
@@ -76,15 +76,18 @@ import { MenuComponent } from './views/menu/menu.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    MenuComponent
+    MenuComponent,
+    CareerComponent,
+    TableComponent,
+    AddcareerComponent,
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
+      useClass: HashLocationStrategy,
     },
     IconSetService,
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

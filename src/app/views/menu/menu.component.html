@@ -1,25 +1,3 @@
-<div class="card">
-    <div class="card-header"> Menu Items </div>
-    <div class="card-body">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Items</th>
-                    <th>Satus</th>
-                    
-                </tr>
-            </thead>
-                <tbody>
-                    <tr *ngFor = "let item of data">
-                        <td>{{item.name}}</td>
-                      <td  *ngIf="item.active==0">InActive</td> 
-                      <td  *ngIf="item.active==1">Active</td> 
-                        
-                      
-                    </tr>
-                    
-                </tbody>
-            </table>
-           
-        </div>
-    </div>
+<div *ngIf="rows">
+  <app-table [columns]="columns" [rows]="rows"></app-table>
+</div>

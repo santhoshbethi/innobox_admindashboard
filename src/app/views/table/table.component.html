@@ -1,9 +1,7 @@
 <div class="card shadow">
   <div class="card-header border-0">
-    <h3 class="mb-0">Career Management</h3>
-    <button class="mb-0 btn-add" (click)="addcareer()">Add</button>
+    <h3 class="mb-0">Menu Management</h3>
   </div>
-
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
@@ -22,16 +20,12 @@
           <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{ items.jobTitle }}</span>
+                <span class="mb-0 text-sm">{{ items.itemName }}</span>
               </div>
             </div>
           </th>
-          <td>{{ items.locationCountry }}</td>
-          <td>{{ items.opens }}</td>
-          <td>{{ items.experience }}</td>
-
-          <td *ngIf="items.status === '0'">Active</td>
-          <td *ngIf="items.status === '1'">InActive</td>
+          <td *ngIf="items.status === 0">Active</td>
+          <td *ngIf="items.status === 1">InActive</td>
           <td>
             <button class="btn-share">
               <span class="btn-text">Edit</span>
