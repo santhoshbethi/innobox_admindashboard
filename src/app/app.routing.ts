@@ -9,7 +9,9 @@ import { P500Component } from "./views/error/500.component";
 import { HomeComponent } from "./views/home/home.component";
 import { LoginComponent } from "./views/login/login.component";
 import { MenuComponent } from "./views/menu/menu.component";
+import { ServicesComponent } from "./views/services/services.component";
 import { RegisterComponent } from "./views/register/register.component";
+import { ContactusComponent } from "./views/contactus/contactus.component";
 
 export const routes: Routes = [
   {
@@ -67,7 +69,7 @@ export const routes: Routes = [
       },
       {
         path: "services",
-        component: HomeComponent,
+        component: ServicesComponent,
       },
       {
         path: "add-career",
@@ -79,7 +81,7 @@ export const routes: Routes = [
       },
       {
         path: "contactus",
-        component: HomeComponent,
+        component: ContactusComponent,
       },
       {
         path: "inbox",

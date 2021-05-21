@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'home.component.html'
+  templateUrl: 'contactus.component.html'
 })
-export class HomeComponent { }
+export class ContactusComponent { }
