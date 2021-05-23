@@ -22,7 +22,17 @@ export class ApiService {
       headers: this.headers,
     });
   }
-
+  getService(){
+    return this.http.get(`${environment.apiUrl}home/service`, {
+      headers: this.headers,
+  });
+}
+  getContact(){
+    return this.http.get(`${environment.apiUrl}home/contact`, {
+      headers: this.headers,
+  });
+  
+}
   //POST APIs
 
   addCareer(data: any) {
@@ -31,10 +41,24 @@ export class ApiService {
     });
   }
 
+
   updateCareer(data: any) {
     console.log(data);
     return this.http.post(`${environment.apiUrl}home/updatecareers`, data, {
       headers: this.headers,
     });
   }
+
+  addservice(data: any) {
+    return this.http.post(`${environment.apiUrl}home/addservice`, data, {
+      headers: this.headers,
+    });
+}
+
+addContact(data: any) {
+  return this.http.post(`${environment.apiUrl}home/addcontact`, data, {
+    headers: this.headers,
+  });
+
+}
 }
