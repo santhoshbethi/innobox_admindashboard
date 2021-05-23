@@ -8,6 +8,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -50,6 +51,7 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
 
 @NgModule({
   imports: [
+    MatSlideToggleModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -80,6 +82,9 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     CareerComponent,
     TableComponent,
     AddcareerComponent,
+  ],
+  exports:[
+MatSlideToggleModule
   ],
   providers: [
     {

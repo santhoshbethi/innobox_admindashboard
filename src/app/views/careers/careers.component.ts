@@ -29,10 +29,7 @@ export class CareerComponent {
         title: "Experience",
         field: "experience",
       },
-      {
-        title: "Status",
-        field: "status",
-      },
+    
       {
         title: "Action",
         field: "action",
@@ -55,5 +52,26 @@ export class CareerComponent {
     console.log("hello");
 
     this.router.navigate(["add-career"]);
+  }
+  updateStatus(items: any,event){
+let status : number;
+    if(event.checked)
+    {
+    status=0;
+    }
+    else
+    {
+      status=1;
+    }
+
+
+   this.api.updateCareer({id:items.ID,status:status}).subscribe(data=> {
+console.log(data);
+
+   },
+   error =>{
+    console.log("error");
+   })
+
   }
 }

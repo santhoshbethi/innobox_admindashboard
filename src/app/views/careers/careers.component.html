@@ -30,13 +30,9 @@
           <td>{{ items.opens }}</td>
           <td>{{ items.experience }}</td>
 
-          <td *ngIf="items.status === '0'">Active</td>
-          <td *ngIf="items.status === '1'">InActive</td>
-          <td>
-            <button class="btn-share">
-              <span class="btn-text">Edit</span>
-            </button>
-          </td>
+          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+      
         </tr>
       </tbody>
     </table>

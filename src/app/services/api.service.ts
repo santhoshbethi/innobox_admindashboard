@@ -30,4 +30,11 @@ export class ApiService {
       headers: this.headers,
     });
   }
+
+  updateCareer(data: any) {
+    console.log(data);
+    return this.http.post(`${environment.apiUrl}home/updatecareers`, data, {
+      headers: this.headers,
+    });
+  }
 }

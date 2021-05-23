@@ -19,6 +19,8 @@ export class AddcareerComponent implements OnInit {
       experience: ["", Validators.required],
       location: ["", Validators.required],
       opens: ["", Validators.required],
+      description: ["", Validators.required],
+
       status: ["", Validators.required],
     });
   }
@@ -26,7 +28,10 @@ export class AddcareerComponent implements OnInit {
   ngOnInit(): void {}
   addData() {
     this.api.addCareer(this.careerForm.value).subscribe((response: any) => {
-      this.router.navigate(["career"]);
+      
+      this.router.navigate(["careers"]);
+    }, error => {
+console.log("error");
     });
   }
 }
