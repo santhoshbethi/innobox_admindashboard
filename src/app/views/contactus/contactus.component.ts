@@ -43,6 +43,6 @@ export class ContactusComponent {
   addaddress() {
     console.log("hello");
 
-    this.router.navigate(["addcontactus"]);
+    this.router.navigate(["add-contactus"]);
   }
 }

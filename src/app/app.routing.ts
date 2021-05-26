@@ -90,7 +90,7 @@ export const routes: Routes = [
         component: ContactusComponent,
       },
       {
-        path: "addcontactus",
+        path: "add-contactus",
         component: addContactusComponent,
       },
       {
