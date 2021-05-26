@@ -35,6 +35,7 @@ import { AppRoutingModule } from "./app.routing";
 // Import containers
 import { DefaultLayoutComponent } from "./containers";
 import { AddcareerComponent } from "./views/addcareer/addcareer.component";
+import { addServicesComponent } from "./views/addservice/addservice.component";
 import { CareerComponent } from "./views/careers/careers.component";
 import { P404Component } from "./views/error/404.component";
 import { P500Component } from "./views/error/500.component";
@@ -82,6 +83,7 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     CareerComponent,
     TableComponent,
     AddcareerComponent,
+    addServicesComponent,
   ],
   exports:[
 MatSlideToggleModule

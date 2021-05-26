@@ -13,7 +13,7 @@
               <input type="file" id="file-input" name="file-input">
             </div>
           </div>
-          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
         </form>
       </div>
  
@@ -31,8 +31,8 @@
         <strong>Short Text </strong> 
       </div>
       <div class="card-body">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"
-         [formGroup]="serviceForm" (ngSubmit)="serviceData()">
+     
+         <form [formGroup]="serviceForm" (ngSubmit)="serviceData()" class="form-horizontal">
         
          <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Menu ID </label>
@@ -85,7 +85,7 @@
                   spellcheck="false" data-ms-editor="true"></textarea>
               </div>
             </div>
-          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <button class="btn-submit">Submit</button>
         </form>
       </div>
  

@@ -23,7 +23,7 @@ export class ApiService {
     });
   }
   getService(){
-    return this.http.get(`${environment.apiUrl}home/service`, {
+    return this.http.get(`${environment.apiUrl}services/getservices`, {
       headers: this.headers,
   });
 }
@@ -51,7 +51,7 @@ export class ApiService {
 
   addService(data: any) {
     console.log(data);
-    return this.http.post(`${environment.apiUrl}home/addservice`, data, {
+    return this.http.post(`${environment.apiUrl}services/addservices`, data, {
       headers: this.headers,
     });
 }

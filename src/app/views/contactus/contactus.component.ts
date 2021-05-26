@@ -51,7 +51,7 @@ export class ContactusComponent {
     });
   }
 
-  addContact() {
+  addaddress() {
     console.log("hello");
 
     this.router.navigate(["addcontactus"]);

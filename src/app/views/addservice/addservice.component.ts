@@ -7,7 +7,7 @@ import { ApiService } from "../../services/api.service";
 
 @Component({
   selector: 'app-addservice',
-  templateUrl: 'addservice.component.html'
+  templateUrl: './addservice.component.html'
 })
 export class addServicesComponent implements OnInit {
   serviceForm: FormGroup;
