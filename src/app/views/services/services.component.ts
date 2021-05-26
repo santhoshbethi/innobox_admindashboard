@@ -51,7 +51,7 @@ export class ServicesComponent {
     });
   }
 
-  addservice() {
+  addService() {
     console.log("hello");
 
     this.router.navigate(["add-services"]);

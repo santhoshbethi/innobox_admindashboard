@@ -49,7 +49,8 @@ export class ApiService {
     });
   }
 
-  addservice(data: any) {
+  addService(data: any) {
+    console.log(data);
     return this.http.post(`${environment.apiUrl}home/addservice`, data, {
       headers: this.headers,
     });

@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <strong>Main Image </strong> Image
+        <strong>Main Image </strong> 
       </div>
       <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -28,28 +28,61 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <strong>Short Text </strong> Text
+        <strong>Short Text </strong> 
       </div>
       <div class="card-body">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"
+         [formGroup]="serviceForm" (ngSubmit)="serviceData()">
+        
+         <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="file-input">Menu ID </label>
+          <div class="col-md-9">
+            <input type="number" id="textarea-input" name="textarea-input" rows="9" 
+            formControlName="menuid"
+                    id="menuid"
+            placeholder="select the number" class="form-control" 
+            spellcheck="false" data-ms-editor="true">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label" for="file-input">Title </label>
+          <div class="col-md-9">
+            <input type="text" id="textarea-input" name="textarea-input" rows="9" 
+            formControlName="title"
+                    id="title"
+            placeholder="select the menu" class="form-control" 
+            spellcheck="false" data-ms-editor="true">
+          </div>
+        </div>
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="file-input">Enter quick text </label>
             <div class="col-md-9">
-              <textarea id="textarea-input" name="textarea-input" rows="9" placeholder="text which is on image.." class="form-control" spellcheck="false" data-ms-editor="true"></textarea>
+              <textarea id="textarea-input" name="textarea-input" rows="9" 
+              formControlName="quicktext"
+                      id="qktext"
+              placeholder="text which is on image.." class="form-control" 
+              spellcheck="false" data-ms-editor="true"></textarea>
             </div>
           </div>
           <div class="form-group row">
               <label class="col-md-3 col-form-label" for="file-input">Enter short description </label>
               <div class="col-md-9">
-                  <textarea id="textarea-input" name="textarea-input" rows="9" placeholder="text below image" class="form-control" spellcheck="false" data-ms-editor="true"></textarea>
+                  <textarea id="textarea-input" name="textarea-input" rows="9"
+                  formControlName="shortdescr"
+                      id="srtdesc"
+                   placeholder="text below image" class="form-control" 
+                   spellcheck="false" data-ms-editor="true"></textarea>
               </div>
             </div>
 
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="file-input">Enter  description </label>
               <div class="col-md-9">
-                  <textarea id="textarea-input" name="textarea-input" rows="9" placeholder="main content .." class="form-control" spellcheck="false" data-ms-editor="true"></textarea>
+                  <textarea id="textarea-input" name="textarea-input" rows="9" 
+                  formControlName="fulldcr"
+                  id="desc"
+                  placeholder="main content .." class="form-control" 
+                  spellcheck="false" data-ms-editor="true"></textarea>
               </div>
             </div>
           <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
