@@ -10,7 +10,14 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   //GET APIs
+  
 
+  getHighlight(data: any) {
+ 
+  return this.http.post(`${environment.apiUrl}services/getserviceshighlights`, data, {
+    headers: this.headers,
+  });
+}
   getMenu() {
     return this.http.get(`${environment.apiUrl}home/menu`, {
       headers: this.headers,
@@ -28,7 +35,7 @@ export class ApiService {
   });
 }
   getContact(){
-    return this.http.get(`${environment.apiUrl}home/contact`, {
+    return this.http.get(`${environment.apiUrl}cts/getaddress`, {
       headers: this.headers,
   });
   
@@ -57,7 +64,7 @@ export class ApiService {
 }
 
 addContact(data: any) {
-  return this.http.post(`${environment.apiUrl}home/addcontact`, data, {
+  return this.http.post(`${environment.apiUrl}cts/addaddress`, data, {
     headers: this.headers,
   });
 

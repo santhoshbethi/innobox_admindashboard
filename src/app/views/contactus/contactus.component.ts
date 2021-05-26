@@ -14,29 +14,18 @@ export class ContactusComponent {
     this.getContact();
     this.columns = [
       {
-        title: "Job Title",
-        field: "jobTitle",
+        title: "S No",
+        field: "ID",
       },
       {
-        title: "Location",
-        field: "locationCountry",
+        title: "Name",
+        field: "locationName",
       },
       {
-        title: "Open Position",
-        field: "opens",
+        title: "Address",
+        field: "locationAddress",
       },
-      {
-        title: "Experience",
-        field: "experience",
-      },
-      {
-        title: "Status",
-        field: "status",
-      },
-      {
-        title: "Action",
-        field: "action",
-      },
+     
     ];
   }
   getContact() {

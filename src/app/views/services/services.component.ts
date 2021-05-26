@@ -14,29 +14,23 @@ export class ServicesComponent {
     this.getService();
     this.columns = [
       {
-        title: "Job Title",
-        field: "jobTitle",
+        title: "S No",
+        field: "ID",
       },
       {
-        title: "Location",
-        field: "locationCountry",
+        title: "Tittle",
+        field: "title",
       },
       {
-        title: "Open Position",
-        field: "opens",
+        title: "Short Desc",
+        field: "shdcr",
       },
       {
-        title: "Experience",
-        field: "experience",
+        title: "Full Desc",
+        field: "fdcr",
       },
-      {
-        title: "Status",
-        field: "status",
-      },
-      {
-        title: "Action",
-        field: "action",
-      },
+     
+     
     ];
   }
   getService() {
@@ -56,4 +50,11 @@ export class ServicesComponent {
 
     this.router.navigate(["add-services"]);
   }
+
+  // highlights(id){
+   
+
+  //   this.router.navigate(["add-services",id]);
+  // }
+
 }

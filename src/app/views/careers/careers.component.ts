@@ -49,7 +49,7 @@ export class CareerComponent {
   }
 
   addcareer() {
-    console.log("hello");
+   
 
     this.router.navigate(["add-career"]);
   }

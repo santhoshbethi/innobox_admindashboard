@@ -17,22 +17,36 @@
                     </div>
           </div>
           <div class="card-body">
-            <table class="table table-bordered">
-              <thead>
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
                 <tr>
-                  <th>S.No</th>
-                  <th>Address</th>
-                  <th>Status</th>
-                  
+                  <th
+                    *ngFor="let items of columns; let i = index"
+                    :key="index"
+                    scope="col"
+                  >
+                    {{ items.title }}
+                  </th>
                 </tr>
               </thead>
-             <tbody>
-    <tr>
-        <td>test</td>
-        <td>test</td>
-        <td><label class="switch switch-label switch-pill switch-primary"><input type="checkbox" checked="" class="switch-input"><span data-checked="✓" data-unchecked="✕" class="switch-slider"></span></label></td>
-    </tr>
-             </tbody>
+              <tbody>
+                <tr *ngFor="let items of rows; let i = index" :key="index">
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{ items.ID }}</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>{{ items.locationName }}</td>
+                  <td>{{ items.locationAddress }}</td>
+                
+        <!-- 
+                  <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+                  <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+               -->
+                </tr>
+              </tbody>
             </table>
           
           </div>
