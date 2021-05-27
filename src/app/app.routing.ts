@@ -14,7 +14,7 @@ import { ServicesComponent } from "./views/services/services.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { ContactusComponent } from "./views/contactus/contactus.component";
 import { addContactusComponent } from "./views/addcontactus/addcontactus.component";
-
+import {recentWorkComponent} from "./views/recentworkscategory/recentworkscat.component";
 export const routes: Routes = [
   {
     path: "",
@@ -83,7 +83,7 @@ export const routes: Routes = [
       },
       {
         path: "recentworks",
-        component: HomeComponent,
+        component: recentWorkComponent,
       },
       {
         path: "contactus",

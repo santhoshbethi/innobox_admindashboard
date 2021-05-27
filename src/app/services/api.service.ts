@@ -38,7 +38,10 @@ export class ApiService {
     return this.http.get(`${environment.apiUrl}cts/getaddress`, {
       headers: this.headers,
   });
-  
+}
+  getRecentwork(){
+    return this.http.get(`${environment.apiUrl}home/recentwork`, {
+      headers: this.headers,});
 }
   //POST APIs
 
@@ -68,5 +71,10 @@ addContact(data: any) {
     headers: this.headers,
   });
 
+}
+addrecentworkcat(data: any) {
+  return this.http.post(`${environment.apiUrl}home/addrecentworkcat`, data, {
+    headers: this.headers,
+  });
 }
 }
