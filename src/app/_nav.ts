@@ -27,10 +27,22 @@ export const navItems: INavData[] = [
     icon: 'icon-pie-chart'
   },
   {
+    name: 'Home sliderimages ',
+    url: '/homeimages',
+    icon: 'icon-pie-chart'
+  },
+  {
     name: 'Recent Works',
     url: '/recentworks',
     icon: 'icon-pie-chart'
   },
+
+  {
+    name: 'Recent Works categoty',
+    url: '/recentworkscat',
+    icon: 'icon-pie-chart'
+  },
+ 
     {
     name: 'Contact Us',
     url: '/contactus',
