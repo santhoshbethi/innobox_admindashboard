@@ -39,10 +39,15 @@ export class ApiService {
       headers: this.headers,
   });
 }
-  getRecentwork(){
-    return this.http.get(`${environment.apiUrl}home/recentwork`, {
+  getRecentworkCat(){
+    return this.http.get(`${environment.apiUrl}home/recentworkcat`, {
       headers: this.headers,});
 }
+getRecentwork(){
+  return this.http.get(`${environment.apiUrl}home/recentwork`, {
+    headers: this.headers,});
+}
+
   //POST APIs
 
   addCareer(data: any) {
@@ -72,8 +77,14 @@ addContact(data: any) {
   });
 
 }
-addrecentworkcat(data: any) {
-  return this.http.post(`${environment.apiUrl}home/addrecentworkcat`, data, {
+
+rcntwrksaddData(data: any) {
+  return this.http.post(`${environment.apiUrl}home/addrecentwork`, data, {
+    headers: this.headers,
+  });
+}
+recentworkcataddcat(data: any) {
+  return this.http.post(`${environment.apiUrl}home/recentworkcatadd`, data, {
     headers: this.headers,
   });
 }

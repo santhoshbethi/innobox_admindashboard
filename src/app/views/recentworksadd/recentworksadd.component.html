@@ -1,1 +1,63 @@
-here u need to create input form
+<div class="container m-t-md">
+  <!-- First row -->
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <!-- Card -->
+      <article class="card animated fadeInLeft">
+        <div class="card-block">
+          <div class="container">
+            <form [formGroup]="contactForm" (ngSubmit)="rcntwrksaddData()" class="form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="company">Locaiton</label>
+                    <input type="text" class="form-control" id="locationName" formControlName="locationName"
+                      placeholder="Enter location" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="vat">Country</label>
+                    <input type="text" class="form-control" id="locationCountry" 
+                    formControlName="locationCountry"
+                      placeholder="enter Country" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="street">Address</label>
+                    <input type="text" class="form-control" id="locationAddress" formControlName="locationAddress"
+                      placeholder="Enter address" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="city">Phone</label>
+                    <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                      placeholder="Enter phone" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="postal-code">Email</label>
+                    <input type="text" class="form-control" id="emailAddress" formControlName="emailAddress"
+                      placeholder="Email ID" />
+                  </div>
+                 </div>
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-5"></div>
+                    <div class="form-group col-md-2">
+                      <button class="btn-submit">Submit</button>
+                    </div>
+                    <div class="col-md-5"></div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div> 
