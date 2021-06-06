@@ -40,11 +40,11 @@ export class ApiService {
   });
 }
   getRecentworkCat(){
-    return this.http.get(`${environment.apiUrl}home/recentworkcat`, {
+    return this.http.get(`${environment.apiUrl}rectwrks/getcat`, {
       headers: this.headers,});
 }
 getRecentwork(){
-  return this.http.get(`${environment.apiUrl}home/recentwork`, {
+  return this.http.get(`${environment.apiUrl}rectwrks/recentwroks`, {
     headers: this.headers,});
 }
 
@@ -65,6 +65,19 @@ getRecentwork(){
   updateCareer(data: any) {
     console.log(data);
     return this.http.post(`${environment.apiUrl}home/updatecareers`, data, {
+      headers: this.headers,
+    });
+  }
+  updateRctwrk(data: any) {
+    console.log(data);
+    return this.http.post(`${environment.apiUrl}rectwrks/updaterecentwroks`, data, {
+      headers: this.headers,
+    });
+  }
+  
+  updateRctcat(data: any) {
+    console.log(data);
+    return this.http.post(`${environment.apiUrl}rectwrks/updatecat`, data, {
       headers: this.headers,
     });
   }

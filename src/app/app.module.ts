@@ -37,6 +37,7 @@ import { AppRoutingModule } from "./app.routing";
 import { DefaultLayoutComponent } from "./containers";
 import { AddcareerComponent } from "./views/addcareer/addcareer.component";
 import { addServicesComponent } from "./views/addservice/addservice.component";
+import { recentWorksComponent } from "./views/rcntwrk/rcntwrks.component";
 import { CareerComponent } from "./views/careers/careers.component";
 import { ContactusComponent } from "./views/contactus/contactus.component";
 import { ServicesComponent } from "./views/services/services.component";
@@ -47,6 +48,7 @@ import { MenuComponent } from "./views/menu/menu.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { addContactusComponent } from "./views/addcontactus/addcontactus.component";
 import { TableComponent } from "./views/table/table.component";
+import { recentWorkcatComponent } from "./views/recentworkscategory/recentworkscat.component";
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -92,6 +94,8 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     ServicesComponent,
     addContactusComponent,
     ContactusComponent,
+    recentWorksComponent,
+    recentWorkcatComponent,
   ],
   exports:[
 MatSlideToggleModule

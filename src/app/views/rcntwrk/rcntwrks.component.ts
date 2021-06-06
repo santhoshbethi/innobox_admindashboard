@@ -31,6 +31,10 @@ export class recentWorksComponent {
         title: "title",
         field: "title",
       },
+      {
+        title: "Action",
+        field: "action",
+      },
       
     ];
   }
@@ -51,4 +55,25 @@ export class recentWorksComponent {
 
     this.router.navigate(["add-recentworks"]);
   }
+  updateStatus(items: any,event){
+    let status : number;
+        if(event.checked)
+        {
+        status=0;
+        }
+        else
+        {
+          status=1;
+        }
+    
+    
+       this.api.updateRctwrk({id:items.ID,status:status,image1:items.image1}).subscribe(data=> {
+    console.log(data);
+    
+       },
+       error =>{
+        console.log("error");
+       })
+    
+      }
 }
