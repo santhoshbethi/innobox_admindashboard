@@ -37,10 +37,9 @@ export class rctwrkcatgoryaddComponent implements OnInit {
 
   rcntwrkcataddData() {
     if(this.data == null){
-    alert("test");
     this.api.recentworkcataddcat(this.contactForm.value).subscribe((response: any) => {
       
-      this.router.navigate(["rctwrkcatgoryadd"]);
+      this.router.navigate(["recentworkscat"]);
     }, error => {
      console.log("error");
     });
