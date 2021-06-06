@@ -14,7 +14,11 @@ import { ServicesComponent } from "./views/services/services.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { ContactusComponent } from "./views/contactus/contactus.component";
 import { addContactusComponent } from "./views/addcontactus/addcontactus.component";
-import {recentWorkComponent} from "./views/recentworkscategory/recentworkscat.component";
+import {recentWorkcatComponent} from "./views/recentworkscategory/recentworkscat.component";
+import {rctwrkcatgoryaddComponent} from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
+import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
+ import {rctwrksaddComponent} from "./views/recentworksadd/recentworksadd.component"
+
 export const routes: Routes = [
   {
     path: "",
@@ -86,8 +90,16 @@ export const routes: Routes = [
         component: AddcareerComponent,
       },
       {
+        path: "recentworkscat",
+        component: recentWorkcatComponent,
+      },
+      {
         path: "recentworks",
-        component: recentWorkComponent,
+        component: recentWorksComponent,
+      },
+      {
+        path: "add-recentworks",
+        component: rctwrksaddComponent,
       },
       {
         path: "contactus",
@@ -100,6 +112,10 @@ export const routes: Routes = [
       {
         path: "inbox",
         component: HomeComponent,
+      },
+      {
+        path: "add-recentworkcat",
+        component: rctwrkcatgoryaddComponent,
       },
     ],
   },

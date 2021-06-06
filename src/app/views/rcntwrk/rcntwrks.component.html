@@ -1,7 +1,7 @@
 <div class="card shadow">
     <div class="card-header border-0">
-      <h3 class="mb-0">Recent Work Category</h3>
-      <button class="mb-0 btn-add" (click)="addrecentworkcat()">Add</button>
+      <h3 class="mb-0">Recent Works</h3>
+      <button class="mb-0 btn-add" (click)="addrecentworks()">Add</button>
     </div>
   
     <div class="table-responsive">
@@ -22,17 +22,17 @@
             <th scope="row">
               <div class="media align-items-center">
                 <div class="media-body">
-                  <span class="mb-0 text-sm">{{ items.name }}</span>
+                  <span class="mb-0 text-sm">{{ items.cat_id }}</span>
                 </div>
               </div>
             </th>
-            <!-- <td>{{ items.locationCountry }}</td>
-            <td>{{ items.opens }}</td>
-            <td>{{ items.experience }}</td>
+            <td>{{ items.homename }}</td>
+            <td>{{ items.title }}</td>
+            <!-- <td>{{ items.experience }}</td>
   
             <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-            <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td> -->
-        
+            <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+         -->
           </tr>
         </tbody>
       </table>
