@@ -51,6 +51,11 @@ export class ApiService {
     });
   }
 
+  getCareersById(data:any){
+    return this.http.post(`${environment.apiUrl}home/careerbyid`, data, {
+      headers: this.headers,
+    });
+  }
 
   updateCareer(data: any) {
     console.log(data);

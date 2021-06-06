@@ -20,16 +20,7 @@ export class ServicesComponent {
       {
         title: "Tittle",
         field: "title",
-      },
-      {
-        title: "Short Desc",
-        field: "shdcr",
-      },
-      {
-        title: "Full Desc",
-        field: "fdcr",
-      },
-     
+      }
      
     ];
   }

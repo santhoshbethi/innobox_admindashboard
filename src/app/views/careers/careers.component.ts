@@ -9,6 +9,7 @@ import { ApiService } from "../../services/api.service";
 export class CareerComponent {
   rows: any;
   columns: any;
+  flag: any = true;
   constructor(public api: ApiService, private router: Router) {}
   ngOnInit() {
     this.getCareer();
@@ -48,10 +49,17 @@ export class CareerComponent {
     });
   }
 
-  addcareer() {
-   
+  updateCareer(id){
+    this.router.navigate(['edit-career']);
+    sessionStorage.setItem('id', id);
+    // sessionStorage.setItem('isEditClicked', 'true');
+  }
 
+  addcareer() {
+   sessionStorage.removeItem('id');
     this.router.navigate(["add-career"]);
+    // sessionStorage.setItem('isEditClicked', 'true');
+
   }
   updateStatus(items: any,event){
 let status : number;

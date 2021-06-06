@@ -18,6 +18,7 @@
                       formControlName="title"
                       id="jobTitle"
                       placeholder="Job Title"
+                      
                     />
                   </div>
                 </div>
@@ -75,6 +76,18 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!-- helps space out sections of the form -->
+                    <label for="inputName">Status</label>
+                    <div class="file-input">
+                      <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple"
+                       accept="image/*" />
+                    </div>
+                  </div>
+                </div>
+
                 <div class="col-md-12">
                   <div class="form-group">
                     <!-- helps space out sections of the form -->

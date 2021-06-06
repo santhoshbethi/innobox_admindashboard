@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 import {
   AppAsideModule,
   AppBreadcrumbModule,
@@ -46,6 +47,7 @@ import { MenuComponent } from "./views/menu/menu.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { addContactusComponent } from "./views/addcontactus/addcontactus.component";
 import { TableComponent } from "./views/table/table.component";
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
