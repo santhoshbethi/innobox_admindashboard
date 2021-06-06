@@ -32,8 +32,9 @@ export class rctwrksaddComponent implements OnInit {
   ngOnInit(): void {}
   rcntwrksaddData() {
     this.api.rcntwrksaddData(this.contactForm.value).subscribe((response: any) => {
+      console.log(response);
       
-      this.router.navigate(["rctwrkcatgoryadd"]);
+    //  this.router.navigate(["rctwrkcatgoryadd"]);
     }, error => {
 console.log("error");
     });

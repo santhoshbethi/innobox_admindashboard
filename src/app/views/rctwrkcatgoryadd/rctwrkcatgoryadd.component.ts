@@ -23,6 +23,7 @@ export class rctwrkcatgoryaddComponent implements OnInit {
 
   ngOnInit(): void {}
   rcntwrkcataddData() {
+    alert("test");
     this.api.recentworkcataddcat(this.contactForm.value).subscribe((response: any) => {
       
       this.router.navigate(["rctwrkcatgoryadd"]);

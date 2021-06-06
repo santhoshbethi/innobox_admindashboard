@@ -68,6 +68,14 @@ getRecentwork(){
       headers: this.headers,
     });
   }
+
+  
+  updateMenus(data: any) {
+    console.log(data);
+    return this.http.post(`${environment.apiUrl}home/updatemenudata`, data, {
+      headers: this.headers,
+    });
+  }
   updateRctwrk(data: any) {
     console.log(data);
     return this.http.post(`${environment.apiUrl}rectwrks/updaterecentwroks`, data, {
@@ -97,12 +105,13 @@ addContact(data: any) {
 }
 
 rcntwrksaddData(data: any) {
-  return this.http.post(`${environment.apiUrl}home/addrecentwork`, data, {
+  return this.http.post(`${environment.apiUrl}rectwrks/addrecentwroks`, data, {
     headers: this.headers,
   });
 }
 recentworkcataddcat(data: any) {
-  return this.http.post(`${environment.apiUrl}home/recentworkcatadd`, data, {
+  console.log(data);
+  return this.http.post(`${environment.apiUrl}rectwrks/addcat`, data, {
     headers: this.headers,
   });
 }
