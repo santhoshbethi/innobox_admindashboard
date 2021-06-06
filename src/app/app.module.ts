@@ -50,6 +50,7 @@ import { addContactusComponent } from "./views/addcontactus/addcontactus.compone
 import { TableComponent } from "./views/table/table.component";
 import { recentWorkcatComponent } from "./views/recentworkscategory/recentworkscat.component";
 import { rctwrkcatgoryaddComponent } from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
+import { rctwrksaddComponent } from "./views/recentworksadd/recentworksadd.component";
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -97,7 +98,8 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     ContactusComponent,
     recentWorksComponent,
     recentWorkcatComponent,
-    rctwrkcatgoryaddComponent
+    rctwrkcatgoryaddComponent,
+    rctwrksaddComponent
   ],
   exports:[
 MatSlideToggleModule
