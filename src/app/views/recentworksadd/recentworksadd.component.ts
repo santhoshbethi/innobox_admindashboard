@@ -31,13 +31,30 @@ export class rctwrksaddComponent implements OnInit {
 
   ngOnInit(): void {}
   rcntwrksaddData() {
-    this.api.rcntwrksaddData(this.contactForm.value).subscribe((response: any) => {
+
+    let _form = new FormData();
+    for (const [key, val] of Object.entries(this.contactForm.value)) {
+      if (key === "file") {
+        _form.append(key, this.contactForm.get(key)?.value);
+      } else {
+        _form.append(key, this.contactForm.get(key)?.value);
+      }
+    }
+    this.api.rcntwrksaddData(_form).subscribe((response: any) => {
       console.log(response);
       
      this.router.navigate(["recentworks"]);
     }, error => {
 console.log("error");
     });
+  }
+
+  uploadFileEvt(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      // this.imageFile = file;
+      this.contactForm.get("file").setValue(file);
+    }
   }
 }
 

@@ -43,8 +43,9 @@
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">File input</label>
-          <div class="col-md-9">
-            <input type="file" id="file-input" name="file-input">
+          <div class="file-input">
+            <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple"
+             accept="image/*" />
           </div>
         </div>
           <div class="form-group row">
