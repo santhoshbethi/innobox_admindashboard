@@ -117,6 +117,10 @@ export const routes: Routes = [
         path: "add-recentworkcat",
         component: rctwrkcatgoryaddComponent,
       },
+      {
+        path: "edit-recentworkcat",
+        component: rctwrkcatgoryaddComponent,
+      },
     ],
   },
 ];

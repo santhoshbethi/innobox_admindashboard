@@ -10,6 +10,8 @@ import { ApiService } from "../../services/api.service";
 })
 export class rctwrkcatgoryaddComponent implements OnInit {
   contactForm: FormGroup;
+  data:any =[];
+
   constructor(
     private _fb: FormBuilder,
     public api: ApiService,
@@ -17,18 +19,52 @@ export class rctwrkcatgoryaddComponent implements OnInit {
   ) {
     this.contactForm = this._fb.group({
       name: ["", Validators.required],
-      
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    var obj = sessionStorage.getItem("data");
+     this.data = JSON.parse(obj);
+
+    if (this.data) {
+      this.contactForm.patchValue(this.data);
+     }
+  }
+
+  ngOnDestroy(): void {
+    sessionStorage.removeItem("data");
+  }
+
   rcntwrkcataddData() {
+    if(this.data == null){
     alert("test");
     this.api.recentworkcataddcat(this.contactForm.value).subscribe((response: any) => {
       
       this.router.navigate(["rctwrkcatgoryadd"]);
     }, error => {
-console.log("error");
+     console.log("error");
     });
   }
+  else{
+    const formatData= this.formatData(this.data);
+    this.api.updateRctcat(formatData).subscribe(data=> {
+      console.log(data);
+      this.router.navigate(["recentworkscat"]);
+
+         
+        }, error =>{
+          console.log("error");
+         });
+        }
+      }
+
+      formatData(data){
+          return{
+            name: data.name,
+            status: data.status,
+            id: data.ID
+          }
+      }
+
+
 }

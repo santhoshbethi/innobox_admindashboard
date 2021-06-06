@@ -69,10 +69,11 @@
                     <!-- helps space out sections of the form -->
                     <label for="inputName">Status</label>
                     <div class="select-dropdown">
-                      <select formControlName="status">
-                        <option value="0">Active</option>
-                        <option value="1">Inactive</option>
-                      </select>
+                      <select  #rate ngModel="hr">
+                        <option selected value="hr">hr</option>
+                        <option value="yr">yr</option>
+                    </select>
+                    
                     </div>
                   </div>
                 </div>
@@ -80,7 +81,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <!-- helps space out sections of the form -->
-                    <label for="inputName">Status</label>
+                    <label for="inputName">Image</label>
                     <div class="file-input">
                       <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple"
                        accept="image/*" />

@@ -1,6 +1,3 @@
-
-
-
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
@@ -68,5 +65,10 @@ export class recentWorkcatComponent {
         console.log("error");
        })
     
+      }
+
+      editWorkCategory(items:any){
+        this.router.navigate(["edit-recentworkcat"]);
+        sessionStorage.setItem('data', JSON.stringify(items));
       }
 }
