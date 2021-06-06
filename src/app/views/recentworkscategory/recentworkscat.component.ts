@@ -17,29 +17,14 @@ export class recentWorkcatComponent {
     this.getRecentworkCat();
     this.columns = [
       {
-        title: "Job Title",
-        field: "jobTitle",
+        title: "ID",
+        field: "ID",
       },
       {
-        title: "Location",
-        field: "locationCountry",
+        title: "Name",
+        field: "name",
       },
-      {
-        title: "Open Position",
-        field: "opens",
-      },
-      {
-        title: "Experience",
-        field: "experience",
-      },
-      {
-        title: "Status",
-        field: "status",
-      },
-      {
-        title: "Action",
-        field: "action",
-      },
+      
     ];
   }
   getRecentworkCat() {

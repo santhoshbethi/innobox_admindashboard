@@ -16,29 +16,22 @@ export class recentWorksComponent {
     this.getRecentwork();
     this.columns = [
       {
-        title: "Job Title",
-        field: "jobTitle",
+        title: "ID",
+        field: "ID",
       },
       {
-        title: "Location",
-        field: "locationCountry",
+        title: "category id",
+        field: "cat_id",
       },
       {
-        title: "Open Position",
-        field: "opens",
+        title: "home name",
+        field: "homename",
       },
       {
-        title: "Experience",
-        field: "experience",
+        title: "title",
+        field: "title",
       },
-      {
-        title: "Status",
-        field: "status",
-      },
-      {
-        title: "Action",
-        field: "action",
-      },
+      
     ];
   }
   getRecentwork() {

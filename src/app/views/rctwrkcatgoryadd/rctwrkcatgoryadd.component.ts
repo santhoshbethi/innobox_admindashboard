@@ -16,13 +16,8 @@ export class rctwrkcatgoryaddComponent implements OnInit {
     public router: Router
   ) {
     this.contactForm = this._fb.group({
-      locationName: ["", Validators.required],
-      locationCountry: ["", Validators.required],
-      locationAddress: ["", Validators.required],
-      phoneNumber: ["", Validators.required],
-      emailAddress: ["", Validators.required],
-      locationLan: ["", Validators.required],
-      locationLat: ["", Validators.required],
+      name: ["", Validators.required],
+      
     });
   }
 

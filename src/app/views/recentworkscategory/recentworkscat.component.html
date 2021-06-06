@@ -22,16 +22,16 @@
             <th scope="row">
               <div class="media align-items-center">
                 <div class="media-body">
-                  <span class="mb-0 text-sm">{{ items.jobTitle }}</span>
+                  <span class="mb-0 text-sm">{{ items.name }}</span>
                 </div>
               </div>
             </th>
-            <td>{{ items.locationCountry }}</td>
+            <!-- <td>{{ items.locationCountry }}</td>
             <td>{{ items.opens }}</td>
             <td>{{ items.experience }}</td>
   
             <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-            <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+            <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td> -->
         
           </tr>
         </tbody>

@@ -16,13 +16,16 @@ export class rctwrksaddComponent implements OnInit {
     public router: Router
   ) {
     this.contactForm = this._fb.group({
-      locationName: ["", Validators.required],
-      locationCountry: ["", Validators.required],
-      locationAddress: ["", Validators.required],
-      phoneNumber: ["", Validators.required],
-      emailAddress: ["", Validators.required],
-      locationLan: ["", Validators.required],
-      locationLat: ["", Validators.required],
+      cat_id: ["", Validators.required],
+      homename: ["", Validators.required],
+      title: ["", Validators.required],
+      qtxt: ["", Validators.required],
+      shdcr: ["", Validators.required],
+      fdcr: ["", Validators.required],
+      file: ["", Validators.required],
+      whatwegot1: ["", Validators.required],
+      whatwegot2: ["", Validators.required],
+      whatwegot3: ["", Validators.required],
     });
   }
 
