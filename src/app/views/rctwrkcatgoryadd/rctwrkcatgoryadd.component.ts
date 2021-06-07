@@ -45,7 +45,7 @@ export class rctwrkcatgoryaddComponent implements OnInit {
     });
   }
   else{
-    const formatData= this.formatData(this.data);
+    const formatData= this.formatData(this.contactForm.value, this.data);
     this.api.updateRctcat(formatData).subscribe(data=> {
       console.log(data);
       this.router.navigate(["recentworkscat"]);
@@ -57,10 +57,10 @@ export class rctwrkcatgoryaddComponent implements OnInit {
         }
       }
 
-      formatData(data){
+      formatData(form, data){
           return{
-            name: data.name,
-            status: data.status,
+            name: form.name,
+            status: form.status,
             id: data.ID
           }
       }
