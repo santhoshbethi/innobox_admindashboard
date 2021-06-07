@@ -76,4 +76,9 @@ export class recentWorksComponent {
        })
     
       }
+
+      editRecentWork(id){
+        this.router.navigate(["edit-recentworks"]);
+        sessionStorage.setItem('id', id);
+      }
 }

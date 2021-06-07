@@ -102,6 +102,10 @@ export const routes: Routes = [
         component: rctwrksaddComponent,
       },
       {
+        path: "edit-recentworks",
+        component: rctwrksaddComponent,
+      },
+      {
         path: "contactus",
         component: ContactusComponent,
       },

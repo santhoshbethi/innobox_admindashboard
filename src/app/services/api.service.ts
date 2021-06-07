@@ -62,6 +62,12 @@ getRecentwork(){
     });
   }
 
+  getRecentWorkById(data:any){
+    return this.http.post(`${environment.apiUrl}rectwrks/recentwroksbyid`, data, {
+      headers: this.headers,
+    });
+  }
+
   updateCareer(data: any) {
     console.log(data);
     return this.http.post(`${environment.apiUrl}home/updatecareers`, data, {

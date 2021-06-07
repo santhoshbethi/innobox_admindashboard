@@ -48,9 +48,7 @@ export class rctwrkcatgoryaddComponent implements OnInit {
     const formatData= this.formatData(this.contactForm.value, this.data);
     this.api.updateRctcat(formatData).subscribe(data=> {
       console.log(data);
-      this.router.navigate(["recentworkscat"]);
-
-         
+      this.router.navigate(["recentworkscat"]); 
         }, error =>{
           console.log("error");
          });

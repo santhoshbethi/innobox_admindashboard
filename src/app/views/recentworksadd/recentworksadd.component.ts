@@ -3,13 +3,14 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
 
-
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: 'recentworksadd.component.html'
+  selector: "app-dashboard",
+  templateUrl: "recentworksadd.component.html",
 })
 export class rctwrksaddComponent implements OnInit {
   contactForm: FormGroup;
+  id: any;
+  res: any;
   constructor(
     private _fb: FormBuilder,
     public api: ApiService,
@@ -23,15 +24,43 @@ export class rctwrksaddComponent implements OnInit {
       shdcr: ["", Validators.required],
       fdcr: ["", Validators.required],
       file: ["", Validators.required],
+      status: ["", Validators.required],
       whatwegot1: ["", Validators.required],
       whatwegot2: ["", Validators.required],
       whatwegot3: ["", Validators.required],
     });
   }
 
-  ngOnInit(): void {}
-  rcntwrksaddData() {
+  ngOnInit(): void {
+    this.id = sessionStorage.getItem("id");
+    if (this.id) {
+      this.getData();
+    }
+  }
 
+  ngOnDestroy(): void {
+    sessionStorage.removeItem("id");
+  }
+
+  getData() {
+    if (this.id != null) {
+      const formatData = this.formatData(this.id);
+      this.api.getRecentWorkById(formatData).subscribe((res: any) => {
+        res.message.file = res.message[0].image1.value;
+        this.res = res.message[0];
+        this.contactForm.patchValue(this.res);
+        console.log(this.contactForm);
+      });
+    }
+  }
+
+  formatData(id) {
+    return {
+      id: id,
+    };
+  }
+
+  rcntwrksaddData() {
     let _form = new FormData();
     for (const [key, val] of Object.entries(this.contactForm.value)) {
       if (key === "file") {
@@ -40,22 +69,33 @@ export class rctwrksaddComponent implements OnInit {
         _form.append(key, this.contactForm.get(key)?.value);
       }
     }
-    this.api.rcntwrksaddData(_form).subscribe((response: any) => {
-      console.log(response);
-      
-     this.router.navigate(["recentworks"]);
-    }, error => {
-console.log("error");
-    });
+    if (this.id == null) {
+      this.api.rcntwrksaddData(_form).subscribe(
+        (response: any) => {
+          this.router.navigate(["recentworks"]);
+        },
+        (error) => {
+          console.log("error");
+        }
+      );
+    } else {
+      const formatData = this.contactForm.value;
+      formatData.id = this.id;
+      this.api.updateRctwrk(formatData).subscribe(
+        (response: any) => {
+          this.router.navigate(["recentworks"]);
+        },
+        (error) => {
+          console.log("error");
+        }
+      );
+    }
   }
 
   uploadFileEvt(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      // this.imageFile = file;
       this.contactForm.get("file").setValue(file);
     }
   }
 }
-
- 
