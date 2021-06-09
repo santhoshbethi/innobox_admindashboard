@@ -18,6 +18,7 @@ import {recentWorkcatComponent} from "./views/recentworkscategory/recentworkscat
 import {rctwrkcatgoryaddComponent} from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
 import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
  import {rctwrksaddComponent} from "./views/recentworksadd/recentworksadd.component"
+import { AddMenuComponent } from "./views/menu/add-menu/add-menu.component";
 
 export const routes: Routes = [
   {
@@ -124,6 +125,10 @@ export const routes: Routes = [
       {
         path: "edit-recentworkcat",
         component: rctwrkcatgoryaddComponent,
+      },
+      {
+        path: "add-menu",
+        component: AddMenuComponent,
       },
     ],
   },

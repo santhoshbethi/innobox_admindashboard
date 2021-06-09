@@ -51,6 +51,11 @@ import { TableComponent } from "./views/table/table.component";
 import { recentWorkcatComponent } from "./views/recentworkscategory/recentworkscat.component";
 import { rctwrkcatgoryaddComponent } from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
 import { rctwrksaddComponent } from "./views/recentworksadd/recentworksadd.component";
+import { AddMenuComponent } from './views/menu/add-menu/add-menu.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -78,8 +83,11 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     IconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
     IconSetModule.forRoot(),
     HttpClientModule,
+    
   ],
   declarations: [
     AppComponent,
@@ -99,7 +107,8 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     recentWorksComponent,
     recentWorkcatComponent,
     rctwrkcatgoryaddComponent,
-    rctwrksaddComponent
+    rctwrksaddComponent,
+    AddMenuComponent,
   ],
   exports:[
 MatSlideToggleModule

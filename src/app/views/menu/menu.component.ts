@@ -1,5 +1,6 @@
 // import {FormBuilder, Validators} from '@angular/forms'
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from "../../services/api.service";
 export class MenuComponent {
   rows: any;
   columns: any;
-  constructor(public api: ApiService) {}
+  constructor(public api: ApiService, private router: Router) {}
   ngOnInit() {
     this.getMenu();
     this.columns = [
@@ -60,6 +61,10 @@ export class MenuComponent {
         console.log("error");
        })
     
+      }
+
+      addMenu(){
+        this.router.navigate(["add-menu"]);
       }
     }
     
