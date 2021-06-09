@@ -53,7 +53,7 @@ export class MenuComponent {
         }
     
     
-       this.api.updateMenus({id:items.parent.ID,status:status}).subscribe(data=> {
+       this.api.updateMenus({id:items.ID,status:status}).subscribe(data=> {
     console.log(data);
     
        },
