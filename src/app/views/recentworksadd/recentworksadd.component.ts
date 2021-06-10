@@ -11,6 +11,7 @@ export class rctwrksaddComponent implements OnInit {
   contactForm: FormGroup;
   id: any;
   res: any;
+  rows:any;
   constructor(
     private _fb: FormBuilder,
     public api: ApiService,
@@ -35,11 +36,26 @@ export class rctwrksaddComponent implements OnInit {
     this.id = sessionStorage.getItem("id");
     if (this.id) {
       this.getData();
+      
     }
+    this.getCat();
   }
 
   ngOnDestroy(): void {
     sessionStorage.removeItem("id");
+  }
+  getCat(){
+    this.api.getCat().subscribe((response) => {
+      let res = JSON.parse(JSON.stringify(response));
+      
+      if (res.message) {
+        this.rows = res.message;
+        console.log(this.rows);
+               
+      } else {
+        console.log("errror", res);
+      }
+    });
   }
 
   getData() {

@@ -29,6 +29,11 @@ export class ApiService {
       headers: this.headers,
     });
   }
+  getCat(){
+    return this.http.get(`${environment.apiUrl}rectwrks/getcat`, {
+      headers: this.headers,
+  });
+}
   getService(){
     return this.http.get(`${environment.apiUrl}services/getservices`, {
       headers: this.headers,

@@ -11,7 +11,25 @@
      
          <form [formGroup]="contactForm" (ngSubmit)="rcntwrksaddData()" class="form-horizontal">
         
-         <div class="form-group row">
+
+          
+         
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="file-input">Select Category </label>
+              
+          <div class="col-md-9">
+            <select id="Parent" name="select3" class="form-control form-control-sm">
+            
+              <option *ngFor="let tech of rows" value={{tech.ID}}>
+                {{ tech.name }}
+              </option>
+              
+            </select>
+          </div>
+        </div>
+        
+
+         <!-- <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Select Category </label>
           <div class="col-md-9">
             <input type="text" id="textarea-input" name="textarea-input" rows="9" 
@@ -20,7 +38,7 @@
             placeholder="select the Category" class="form-control" 
             spellcheck="false" data-ms-editor="true">
           </div>
-        </div>
+        </div> -->
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Home Name</label>
           <div class="col-md-9">
