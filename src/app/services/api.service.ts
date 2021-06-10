@@ -121,4 +121,10 @@ recentworkcataddcat(data: any) {
     headers: this.headers,
   });
 }
+
+addMenuWithParent(data:any){
+  return this.http.post(`${environment.apiUrl}home/addmenu`, data, {
+    headers: this.headers,
+  });
+  }
 }

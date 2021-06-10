@@ -66,5 +66,11 @@ export class MenuComponent {
       addMenu(){
         this.router.navigate(["add-menu"]);
       }
+
+      editCareer(items){
+        this.router.navigate(["edit-menu"]);
+        sessionStorage.setItem('data', JSON.stringify(items));
+
+      }
     }
     

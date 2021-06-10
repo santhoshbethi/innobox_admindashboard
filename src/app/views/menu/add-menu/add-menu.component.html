@@ -6,21 +6,21 @@
         <article class="card animated fadeInLeft">
           <div class="card-block">
             <div class="container">
-              <form [formGroup]="contactForm" (ngSubmit)="rcntwrkcataddData()" class="form">
+              <form [formGroup]="menuForm" (ngSubmit)="addMenu()" class="form">
                 <div class="row">
                   
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="company">Name</label>
-                      <input type="text" class="form-control" id="Name" formControlName="name"
+                      <input type="text" class="form-control" id="Name" formControlName="menuname"
                         placeholder="Enter the Name" />
                     </div>
-                   
                   </div>
+
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="Parent">Select Parent</label>(If it is parent select parent in dropdown)
-                    <select id="Parent" name="select3" class="form-control form-control-sm">
+                    <select id="Parent" name="select3" class="form-control form-control-sm" formControlName="parent">
                       <option value="0">Parent</option>
                       <option *ngFor="let tech of rows" value={{tech.ID}}>
                         {{ tech.itemName }}

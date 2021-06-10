@@ -130,6 +130,10 @@ export const routes: Routes = [
         path: "add-menu",
         component: AddMenuComponent,
       },
+      {
+        path: "edit-menu",
+        component: AddMenuComponent,
+      },
     ],
   },
 ];
