@@ -18,7 +18,7 @@
               <label class="col-md-3 col-form-label" for="file-input">Select Category </label>
               
           <div class="col-md-9">
-            <select id="Parent" name="select3" class="form-control form-control-sm">
+            <select id="Parent" name="select3" class="form-control form-control-sm" formControlName="cat_id">
             
               <option *ngFor="let tech of rows" value={{tech.ID}}>
                 {{ tech.name }}
