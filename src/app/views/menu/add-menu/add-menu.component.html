@@ -22,7 +22,7 @@
                       <label for="Parent">Select Parent</label>(If it is parent select parent in dropdown)
                     <select id="Parent" name="select3" class="form-control form-control-sm" formControlName="parent">
                       <option value="0">Parent</option>
-                      <option *ngFor="let tech of rows" value={{tech.ID}}>
+                      <option *ngFor="let tech of rows" ngValue= "{{tech.ID}}" >
                         {{ tech.itemName }}
                       </option>
                       

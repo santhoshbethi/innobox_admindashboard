@@ -34,6 +34,7 @@ export class AddMenuComponent {
     if (this.data) {
       this.menuForm.patchValue(this.data);
       this.menuForm.controls.menuname.setValue(this.data.itemName);
+      this.menuForm.controls.parent.setValue(this.data.refID);
       console.log(this.menuForm);
     }
     this.getMenu();
@@ -74,6 +75,7 @@ export class AddMenuComponent {
     } else {
       const formatData = this.menuForm.value;
       formatData.id = this.data.ID;
+      formatData.refID= this.menuForm.controls.parent.value
       this.api.updateMenus(formatData).subscribe(
         (response: any) => {
           this.router.navigate(["menu"]);
