@@ -9,6 +9,8 @@ import { ApiService } from "../../services/api.service";
 })
 export class addContactusComponent implements OnInit {
   contactForm: FormGroup;
+  data: any = [];
+
   constructor(
     private _fb: FormBuilder,
     public api: ApiService,
@@ -25,13 +27,33 @@ export class addContactusComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    var obj = sessionStorage.getItem("data");
+    this.data = JSON.parse(obj);
+    if (this.data) {
+      this.contactForm.patchValue(this.data);
+    }
+  }
+
+  ngOnDestroy() {
+    this.data = sessionStorage.removeItem("data");
+  }
+
   contactData() {
+    if(this.data.ID== null){
     this.api.addContact(this.contactForm.value).subscribe((response: any) => {
-      
       this.router.navigate(["contactus"]);
     }, error => {
-console.log("error");
+      console.log("error");
+    });
+  }else{
+    const formatData = this.contactForm.value;
+    formatData.id = this.data.ID;
+    this.api.addContact(formatData).subscribe((response: any) => {
+      this.router.navigate(["contactus"]);
+    }, error => {
+      console.log("error");
     });
   }
+}
 }

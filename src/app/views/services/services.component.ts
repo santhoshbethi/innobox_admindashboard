@@ -48,4 +48,10 @@ export class ServicesComponent {
   //   this.router.navigate(["add-services",id]);
   // }
 
+  editServices(id){
+    sessionStorage.setItem('id', id);
+    this.router.navigate(["add-services"]);
+
+  }
+
 }

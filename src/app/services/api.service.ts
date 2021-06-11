@@ -52,6 +52,11 @@ getRecentwork(){
   return this.http.get(`${environment.apiUrl}rectwrks/recentwroks`, {
     headers: this.headers,});
 }
+getServicesById(data:any){
+  return this.http.post(`${environment.apiUrl}services/getservicesbyid`, data, {
+    headers: this.headers,
+  });
+}
 
   //POST APIs
 
@@ -101,6 +106,12 @@ getRecentwork(){
     });
   }
 
+  updateContact(data: any) {
+    return this.http.post(`${environment.apiUrl}cts/updateaddress`, data, {
+      headers: this.headers,
+    });
+  }
+
   addService(data: any) {
     console.log(data);
     return this.http.post(`${environment.apiUrl}services/addservices`, data, {
@@ -112,7 +123,6 @@ addContact(data: any) {
   return this.http.post(`${environment.apiUrl}cts/addaddress`, data, {
     headers: this.headers,
   });
-
 }
 
 rcntwrksaddData(data: any) {

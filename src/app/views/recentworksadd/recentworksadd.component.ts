@@ -33,12 +33,12 @@ export class rctwrksaddComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getCat();
     this.id = sessionStorage.getItem("id");
     if (this.id) {
       this.getData();
       
     }
-    this.getCat();
   }
 
   ngOnDestroy(): void {

@@ -45,4 +45,10 @@ export class ContactusComponent {
 
     this.router.navigate(["add-contactus"]);
   }
+
+  editDetails(data){
+    sessionStorage.setItem('data', JSON.stringify(data));
+    this.router.navigate(["edit-contactus"]);
+
+  }
 }

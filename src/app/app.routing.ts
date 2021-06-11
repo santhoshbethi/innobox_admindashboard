@@ -115,6 +115,10 @@ export const routes: Routes = [
         component: addContactusComponent,
       },
       {
+        path: "edit-contactus",
+        component: addContactusComponent,
+      },
+      {
         path: "inbox",
         component: HomeComponent,
       },

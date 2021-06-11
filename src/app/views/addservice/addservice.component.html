@@ -5,7 +5,7 @@
         <strong>Main Image </strong> 
       </div>
       <div class="card-body">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <!-- <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
 
           <div class="form-group row">
             <label class="col-md-3 col-form-label" for="file-input">File input</label>
@@ -14,7 +14,7 @@
             </div>
           </div>
           <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-        </form>
+        </form> -->
       </div>
  
     </div>
@@ -36,13 +36,28 @@
         
          <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Menu ID </label>
-          <div class="col-md-9">
+          <!-- <div class="col-md-9">
             <input type="number" id="textarea-input" name="textarea-input" rows="9" 
             formControlName="menuid"
                     id="menuid"
             placeholder="select the number" class="form-control" 
             spellcheck="false" data-ms-editor="true">
+          </div> -->
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Parent">Select Parent</label>(If it is parent select parent in dropdown)
+              <select id="menuid" name="select3" class="form-control form-control-sm"
+                style="width:152%;  height:42px; border: dark-grey 20px;" formControlName="menuid">
+                <option value="0">Parent</option>
+                <option *ngFor="let tech of rows" ngValue="{{tech.ID}}">
+                  {{ tech.itemName }}
+                </option>
+              </select>
+            </div>
           </div>
+
+
         </div>
         <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Title </label>
@@ -50,7 +65,7 @@
             <input type="text" id="textarea-input" name="textarea-input" rows="9" 
             formControlName="title"
                     id="title"
-            placeholder="select the menu" class="form-control" 
+            placeholder="Title" class="form-control" 
             spellcheck="false" data-ms-editor="true">
           </div>
         </div>
