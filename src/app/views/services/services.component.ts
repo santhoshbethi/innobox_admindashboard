@@ -20,6 +20,18 @@ export class ServicesComponent {
       {
         title: "Tittle",
         field: "title",
+      },
+      {
+        title: "Add Image",
+        field: "images",
+      },
+      {
+        title: "Highlights",
+        field: "highlights",
+      },
+      {
+        title: "Action",
+        field: "action",
       }
      
     ];
@@ -54,4 +66,14 @@ export class ServicesComponent {
 
   }
 
+  addImages(id){
+    sessionStorage.setItem('id', id);
+   this.router.navigate(["add-image"]);
+  }
+
+  addHighlight(id){
+   this.router.navigate(["highlight"]);
+   sessionStorage.setItem('id', id);
+
+  }
 }

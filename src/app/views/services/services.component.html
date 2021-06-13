@@ -28,18 +28,17 @@
           </th>
           <td>{{ items.title }}</td>
           <!-- <td>{{ items.fdcr }}</td>
-          <td>{{ items.shdcr }}</td> -->
-
-          <button mat-icon-button aria-label="Toggle star"
-          (click)="editServices(items.serviceID)"
-          style="color: blue">
-          <mat-icon class="material-icons" color="primary">edit</mat-icon>
-        </button>
-       
-<!-- 
-          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-       -->
+                            <td>{{ items.shdcr }}</td> -->
+          <td><button class="mb-0 btn-image" (click)="addImages(items.serviceID)">Add Image</button></td>
+          <td> <button class="mb-0 btn-highlight" (click)="addHighlight(items.serviceID)">Highlights</button> </td>
+          <td> <button mat-icon-button aria-label="Toggle star" (click)="editServices(items.serviceID)" style="color: blue">
+              <mat-icon class="material-icons" color="primary">edit</mat-icon>
+            </button></td>
+        
+          <!-- 
+                  <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+                  <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+               -->
         </tr>
       </tbody>
     </table>

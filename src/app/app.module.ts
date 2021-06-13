@@ -54,6 +54,8 @@ import { rctwrksaddComponent } from "./views/recentworksadd/recentworksadd.compo
 import { AddMenuComponent } from './views/menu/add-menu/add-menu.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { AddImagesComponent } from './views/services/add-images/add-images.component';
+import { HighlightsComponent } from './views/services/highlights/highlights.component';
 
 
 
@@ -109,6 +111,8 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     rctwrkcatgoryaddComponent,
     rctwrksaddComponent,
     AddMenuComponent,
+    AddImagesComponent,
+    HighlightsComponent,
   ],
   exports:[
 MatSlideToggleModule

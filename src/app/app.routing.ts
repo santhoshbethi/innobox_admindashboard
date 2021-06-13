@@ -19,6 +19,8 @@ import {rctwrkcatgoryaddComponent} from "./views/rctwrkcatgoryadd/rctwrkcatgorya
 import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
  import {rctwrksaddComponent} from "./views/recentworksadd/recentworksadd.component"
 import { AddMenuComponent } from "./views/menu/add-menu/add-menu.component";
+import { AddImagesComponent } from "./views/services/add-images/add-images.component";
+import { HighlightsComponent } from "./views/services/highlights/highlights.component";
 
 export const routes: Routes = [
   {
@@ -137,6 +139,14 @@ export const routes: Routes = [
       {
         path: "edit-menu",
         component: AddMenuComponent,
+      },
+      {
+        path: "add-image",
+        component: AddImagesComponent,
+      },
+      {
+        path: "highlight",
+        component: HighlightsComponent,
       },
     ],
   },

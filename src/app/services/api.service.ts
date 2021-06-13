@@ -66,6 +66,13 @@ getServicesById(data:any){
     });
   }
 
+  addServiceImages(data: any) {
+    return this.http.post(`${environment.apiUrl}services/addservicesimage`, data, {
+      headers: this.headers,
+    });
+  }
+
+
   getCareersById(data:any){
     return this.http.post(`${environment.apiUrl}home/careerbyid`, data, {
       headers: this.headers,
@@ -74,6 +81,11 @@ getServicesById(data:any){
 
   getRecentWorkById(data:any){
     return this.http.post(`${environment.apiUrl}rectwrks/recentwroksbyid`, data, {
+      headers: this.headers,
+    });
+  }
+  getServiceHighlightById(id){
+    return this.http.post(`${environment.apiUrl}services/getserviceshighlights`, id, {
       headers: this.headers,
     });
   }
@@ -142,4 +154,10 @@ addMenuWithParent(data:any){
     headers: this.headers,
   });
   }
+
+  addHighlights(data:any){
+    return this.http.post(`${environment.apiUrl}addserviceshtls`, data, {
+      headers: this.headers,
+    });
+    }
 }

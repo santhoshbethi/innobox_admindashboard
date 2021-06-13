@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Main Image </strong>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"
+                    [formGroup]="imageForm" (ngSubmit)="addImage()">
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="file-input">File input</label>
+                        <div class="col-md-9">
+                            <input type="file" #fileInput formControlName="file" id="file"
+                                (change)="uploadFileEvt($event)" multiple="multiple" accept="image/*" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <button class="btn-submit" class="btn btn-block btn-outline-primary active">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

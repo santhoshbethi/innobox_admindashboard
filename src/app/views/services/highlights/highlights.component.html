@@ -1,0 +1,69 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-4">
+                    Highlights
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" aria-pressed="true" class="btn btn-block btn-outline-primary active"
+                        (click)="addButtonClicked()">Add
+                        Highlights</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Content</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of value">
+                        <td>{{items.serviceID}}</td>
+                        <td>{{items.cntnt}}</td>
+                        <td><label class="switch switch-label switch-pill switch-primary"><input type="checkbox"
+                                    checked="" class="switch-input"><span data-checked="✓" data-unchecked="✕"
+                                    class="switch-slider"></span></label></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container m-t-md" *ngIf="clicked">
+    <!-- First row -->
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <!-- Card -->
+            <article class="card animated fadeInLeft">
+                <div class="card-block">
+                    <div class="container">
+                        <form [formGroup]="ContentForm" (ngSubmit)="addContent()" class="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="company">Content</label>
+                                        <input type="text" class="form-control" id="Name" formControlName="content"
+                                            placeholder="Enter Content" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <button class="btn-submit" class="btn btn-block btn-outline-primary active">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
