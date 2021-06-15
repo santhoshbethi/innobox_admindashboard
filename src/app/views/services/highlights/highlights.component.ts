@@ -27,6 +27,8 @@ export class HighlightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = sessionStorage.getItem('id');
+    console.log("here");
+    console.log(this.id);
     if (this.id) {
       this.fetchData();
     }
@@ -37,8 +39,8 @@ export class HighlightsComponent implements OnInit {
   }
 
   fetchData() {
-    const formatData = this.formatData(this.id);
-    this.api.getServiceHighlightById(formatData).subscribe((response: any) => {
+   // const formatData = this.formatData(this.id);
+    this.api.getServiceHighlightById({"id":this.id}).subscribe((response: any) => {
       console.log(response);
       // this.serviceForm.patchValue(response.message[0].maindata[0])
       this.value = response.message;
@@ -62,10 +64,8 @@ export class HighlightsComponent implements OnInit {
    data.servicesid = this.id;
    data.content = this.ContentForm.controls.content.value;
    this.api.addHighlights(data).subscribe((response: any) => {
-    console.log(response);
-    // this.serviceForm.patchValue(response.message[0].maindata[0])
-    this.value = response.message;
-    this.ContentForm.value.reset();
+   
+    window.location.reload()
   }, error => {
     console.log("error");
   });

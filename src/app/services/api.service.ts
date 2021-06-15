@@ -84,8 +84,8 @@ getServicesById(data:any){
       headers: this.headers,
     });
   }
-  getServiceHighlightById(id){
-    return this.http.post(`${environment.apiUrl}services/getserviceshighlights`, id, {
+  getServiceHighlightById(data:any){
+    return this.http.post(`${environment.apiUrl}services/getserviceshighlights`, data, {
       headers: this.headers,
     });
   }
@@ -156,7 +156,7 @@ addMenuWithParent(data:any){
   }
 
   addHighlights(data:any){
-    return this.http.post(`${environment.apiUrl}addserviceshtls`, data, {
+    return this.http.post(`${environment.apiUrl}services/addserviceshtls`, data, {
       headers: this.headers,
     });
     }

@@ -15,6 +15,16 @@
                                 (change)="uploadFileEvt($event)" multiple="multiple" accept="image/*" />
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="type">File input</label>
+                        <div class="col-md-4">
+                            <select id="imagetype" class="form-control">
+                                <option value="m">Main Image (top)</option>
+                                <option value="i">Product image</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                         <button class="btn-submit" class="btn btn-block btn-outline-primary active">Submit</button>

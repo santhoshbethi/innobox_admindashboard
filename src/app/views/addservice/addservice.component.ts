@@ -74,7 +74,7 @@ export class addServicesComponent implements OnInit {
   fetchData() {
     const formatData = this.formatData(this.id);
     this.api.getServicesById(formatData).subscribe((response: any) => {
-      console.log(response);
+      console.log("here");
       this.serviceForm.patchValue(response.message[0].maindata[0])
     }, error => {
       console.log("error");
