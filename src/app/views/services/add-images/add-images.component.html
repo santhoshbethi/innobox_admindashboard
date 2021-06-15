@@ -18,9 +18,9 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="type">File input</label>
                         <div class="col-md-4">
-                            <select id="imagetype" class="form-control">
-                                <option value="m">Main Image (top)</option>
-                                <option value="i">Product image</option>
+                            <select id="imagetype" class="form-control" *ngFor="let val of value">
+                                <option value="m">{{val[0].maindata[0].image1}}</option>
+                                <option value="i">{{val[0].maindata[0].image2}}</option>
                             </select>
                         </div>
                     </div>

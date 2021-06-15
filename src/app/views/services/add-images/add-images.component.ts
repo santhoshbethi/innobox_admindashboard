@@ -11,16 +11,37 @@ import { ApiService } from '../../../services/api.service';
 export class AddImagesComponent implements OnInit {
 
   imageForm: FormGroup;
+  value: any;
+  id: any;
 
   constructor(private _fb: FormBuilder,
     public api: ApiService,
-    public router: Router) { }
+    public router: Router) {
+      this.imageForm = this._fb.group({
+        file: ["", Validators.required],
+      });
+     }
 
   ngOnInit(): void {
-    this.imageForm = this._fb.group({
-      file: ["", Validators.required],
-    });
+    this.id = sessionStorage.getItem('id');
+    console.log("here");
+    console.log(this.id);
+    if (this.id) {
+      this.fetchData();
+    }
   }
+
+  fetchData() {
+    // const formatData = this.formatData(this.id);
+     this.api.getServicesById({"id":this.id}).subscribe((response: any) => {
+       console.log(response);
+       // this.serviceForm.patchValue(response.message[0].maindata[0])
+       this.value = response.message;
+       console.log(this.value);
+     }, error => {
+       console.log("error");
+     });
+   }
 
   addImage() {
     let _form = new FormData();

@@ -64,7 +64,7 @@ export class AddMenuComponent {
     form.href = "href";
     console.log(form);
 
-    if (this.data.ID == null) {
+    if (this.data ==null) {
       this.api.addMenuWithParent(form).subscribe(
         (response: any) => {
           this.router.navigate(["menu"]);
