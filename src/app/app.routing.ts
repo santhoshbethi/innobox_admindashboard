@@ -21,7 +21,8 @@ import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
 import { AddMenuComponent } from "./views/menu/add-menu/add-menu.component";
 import { AddImagesComponent } from "./views/services/add-images/add-images.component";
 import { HighlightsComponent } from "./views/services/highlights/highlights.component";
-
+import {homeSliderComponent} from "./views/homeSlider/homeslider.component";
+import {addHomeSliderComponent} from "./views/addhomeslider/addhomeslider.component";
 export const routes: Routes = [
   {
     path: "",
@@ -147,6 +148,14 @@ export const routes: Routes = [
       {
         path: "highlight",
         component: HighlightsComponent,
+      },
+      {
+        path:"homeslider",
+        component:homeSliderComponent,
+      },
+      {
+        path:"add-homeslider",
+        component:addHomeSliderComponent,
       },
     ],
   },
