@@ -57,6 +57,11 @@ getServicesById(data:any){
     headers: this.headers,
   });
 }
+  getHomeSliders(data:any){
+    return this.http.post(`${environment.apiUrl}home/homeslider`, data, {
+      headers: this.headers,
+    });
+}
 
   //POST APIs
 
