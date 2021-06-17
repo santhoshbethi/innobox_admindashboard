@@ -75,6 +75,10 @@ export class addServicesComponent implements OnInit {
     const formatData = this.formatData(this.id);
     this.api.getServicesById(formatData).subscribe((response: any) => {
       console.log("here");
+      response.message[0].maindata[0].quicktext = response.message[0].maindata[0].qtxt;
+      response.message[0].maindata[0].shortdescr = response.message[0].maindata[0].shdcr;
+      response.message[0].maindata[0].fulldcr = response.message[0].maindata[0].fdcr;
+      response.message[0].maindata[0].menuid = response.message[0].maindata[0].serviceID;
       this.serviceForm.patchValue(response.message[0].maindata[0])
     }, error => {
       console.log("error");

@@ -31,6 +31,10 @@ export class AddImagesComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    sessionStorage.removeItem('id');
+  }
+
   fetchData() {
     // const formatData = this.formatData(this.id);
      this.api.getServicesById({"id":this.id}).subscribe((response: any) => {
