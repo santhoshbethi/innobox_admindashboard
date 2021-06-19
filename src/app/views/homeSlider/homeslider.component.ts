@@ -4,7 +4,7 @@ import { ApiService } from "../../services/api.service";
 
 @Component({
   selector: "app-dashboard",
-  templateUrl: "careers.component.html",
+  templateUrl: "homeslider.component.html",
 })
 export class homeSliderComponent {
   rows: any;
