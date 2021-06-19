@@ -63,7 +63,8 @@ export class addServicesComponent implements OnInit {
     } else {
       const formatData = this.serviceForm.value;
       formatData.id = this.id;
-      this.api.addService(formatData).subscribe((response: any) => {
+      formatData.serviceID = this.id;
+      this.api.updateService(formatData).subscribe((response: any) => {
         this.router.navigate(["services"]);
       }, error => {
         console.log("error");
@@ -75,10 +76,11 @@ export class addServicesComponent implements OnInit {
     const formatData = this.formatData(this.id);
     this.api.getServicesById(formatData).subscribe((response: any) => {
       console.log("here");
-      response.message[0].maindata[0].quicktext = response.message[0].maindata[0].qtxt;
+      response.message[0].maindata[0].qtxt = response.message[0].maindata[0].qtxt;
       response.message[0].maindata[0].shortdescr = response.message[0].maindata[0].shdcr;
       response.message[0].maindata[0].fulldcr = response.message[0].maindata[0].fdcr;
       response.message[0].maindata[0].menuid = response.message[0].maindata[0].serviceID;
+      this.id = response.message[0].maindata[0].ID;
       this.serviceForm.patchValue(response.message[0].maindata[0])
     }, error => {
       console.log("error");

@@ -136,6 +136,13 @@ getServicesById(data:any){
     });
 }
 
+updateService(data: any) {
+  console.log(data);
+  return this.http.post(`${environment.apiUrl}services/updateservices`, data, {
+    headers: this.headers,
+  });
+}
+
 addContact(data: any) {
   return this.http.post(`${environment.apiUrl}cts/addaddress`, data, {
     headers: this.headers,

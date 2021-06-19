@@ -46,10 +46,9 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label for="Parent">Select Parent</label>(If it is parent select parent in dropdown)
+              <label for="Parent">Select Menu Id</label>
               <select id="menuid" name="select3" class="form-control form-control-sm"
                 style="width:152%;  height:42px; border: dark-grey 20px;" formControlName="menuid">
-                <option value="0">Parent</option>
                 <option *ngFor="let tech of rows" ngValue="{{tech.ID}}">
                   {{ tech.itemName }}
                 </option>
