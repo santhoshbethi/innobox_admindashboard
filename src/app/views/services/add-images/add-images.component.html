@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="type">File input</label>
                         <div class="col-md-4">
-                            <select id="imagetype" class="form-control" *ngFor="let val of value">
+                            <select id="imagetype" class="form-control" *ngFor="let val of value" formControlName="type">
                                 <option value="m">Main Image</option>
                                 <option value="i">Inner Image</option>
                             </select>

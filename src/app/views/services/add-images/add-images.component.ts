@@ -19,6 +19,7 @@ export class AddImagesComponent implements OnInit {
     public router: Router) {
       this.imageForm = this._fb.group({
         file: ["", Validators.required],
+        type: ["", Validators.required],
       });
      }
 
@@ -49,6 +50,7 @@ export class AddImagesComponent implements OnInit {
 
   addImage() {
     let _form = new FormData();
+    _form.append("id", this.id);
     for (const [key, val] of Object.entries(this.imageForm.value)) {
       if (key === "file") {
         _form.append(key, this.imageForm.get(key)?.value);
