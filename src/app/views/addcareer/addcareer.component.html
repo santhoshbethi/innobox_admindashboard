@@ -6,7 +6,7 @@
       <article class="card animated fadeInLeft">
         <div class="card-block">
           <div class="container">
-            <form [formGroup]="careerForm" (ngSubmit)="addData()" class="form">
+            <form [formGroup]="careerForm" (ngSubmit)="addData()" class="form was-validated ng-untouched ng-pristine ng-valid">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -18,6 +18,7 @@
                       formControlName="title"
                       id="jobTitle"
                       placeholder="Job Title"
+                      required
                       
                     />
                   </div>
@@ -32,6 +33,7 @@
                       formControlName="experience"
                       id="Experience"
                       placeholder="Experience"
+                      required
                     />
                   </div>
                 </div>
@@ -45,6 +47,7 @@
                       formControlName="location"
                       id="Location"
                       placeholder="Location"
+                      required
                     />
                   </div>
                 </div>
@@ -59,7 +62,7 @@
                       formControlName="opens"
                       placeholder="Position"
                       type="number"
-                    />
+                        required  />
                   </div>
                 </div>
                
@@ -83,8 +86,8 @@
                     <!-- helps space out sections of the form -->
                     <label for="inputName">Image</label>
                     <div class="file-input">
-                      <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple"
-                       accept="image/*" />
+                      <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg"
+                       required />
                     </div>
                   </div>
                 </div>
@@ -99,10 +102,11 @@
                       id="description"
                       formControlName="description"
                       placeholder="Description"
-                      
+                      required
                     ></textarea>
 
                   </div>
+                  
                 </div>
                 <div class="col-md-12">
                   <div class="row">

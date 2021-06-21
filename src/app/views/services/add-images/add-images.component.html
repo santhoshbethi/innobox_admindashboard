@@ -12,7 +12,7 @@
                         <label class="col-md-3 col-form-label" for="file-input">File input</label>
                         <div class="col-md-9">
                             <input type="file" #fileInput formControlName="file" id="file"
-                                (change)="uploadFileEvt($event)" multiple="multiple" accept="image/*" />
+                                (change)="uploadFileEvt($event)" multiple="multiple" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg" />
                         </div>
                     </div>
                     <div class="form-group row">

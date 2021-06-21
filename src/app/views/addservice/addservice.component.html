@@ -32,7 +32,7 @@
       </div>
       <div class="card-body">
      
-         <form [formGroup]="serviceForm" (ngSubmit)="serviceData()" class="form-horizontal">
+         <form [formGroup]="serviceForm" (ngSubmit)="serviceData()" class="form-horizontal was-validated ng-untouched ng-pristine ng-valid">
         
          <div class="form-group row">
           <label class="col-md-3 col-form-label" for="file-input">Menu ID </label>
@@ -64,8 +64,8 @@
             <input type="text" id="textarea-input" name="textarea-input" rows="9" 
             formControlName="title"
                     id="title"
-            placeholder="Title" class="form-control" 
-            spellcheck="false" data-ms-editor="true">
+            placeholder="Title" class="form-control"  
+            spellcheck="false" data-ms-editor="true" required>
           </div>
         </div>
           <div class="form-group row">
@@ -75,7 +75,7 @@
               formControlName="quicktext"
                       id="qktext"
               placeholder="text which is on image.." class="form-control" 
-              spellcheck="false" data-ms-editor="true"></textarea>
+              spellcheck="false" data-ms-editor="true" required></textarea>
             </div>
           </div>
           <div class="form-group row">
@@ -85,7 +85,7 @@
                   formControlName="shortdescr"
                       id="srtdesc"
                    placeholder="text below image" class="form-control" 
-                   spellcheck="false" data-ms-editor="true"></textarea>
+                   spellcheck="false" data-ms-editor="true" required></textarea>
               </div>
             </div>
 
@@ -96,7 +96,7 @@
                   formControlName="fulldcr"
                   id="desc"
                   placeholder="main content .." class="form-control" 
-                  spellcheck="false" data-ms-editor="true"></textarea>
+                  spellcheck="false" data-ms-editor="true" required></textarea>
               </div>
             </div>
             <div class="row">

@@ -84,7 +84,7 @@
                       <label for="inputName">Image</label>
                       <div class="file-input">
                         <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple"
-                         accept="image/*" />
+                        accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg" />
                       </div>
                     </div>
                   </div>

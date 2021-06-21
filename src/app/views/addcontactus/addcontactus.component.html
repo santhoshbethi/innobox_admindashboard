@@ -9,7 +9,7 @@
             <form
               [formGroup]="contactForm"
               (ngSubmit)="contactData()"
-              class="form"
+              class="form was-validated ng-untouched ng-pristine ng-valid"
             >
               <div class="row">
                 <div class="col-md-6">
@@ -21,6 +21,7 @@
                       id="locationName"
                       formControlName="locationName"
                       placeholder="Enter location"
+                      required
                     />
                   </div>
                 </div>
@@ -33,6 +34,7 @@
                       id="locationCountry"
                       formControlName="locationCountry"
                       placeholder="enter Country"
+                      required
                     />
                   </div>
                 </div>
@@ -45,6 +47,7 @@
                       id="locationAddress"
                       formControlName="locationAddress"
                       placeholder="Enter address"
+                      required
                     />
                   </div>
                 </div>
@@ -52,12 +55,14 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="city">Phone</label>
-                    <input
-                      type="text"
+                    <input 
+                      type="number"
+                      pattern="[+]{1}[0-9]{11,14}"
                       class="form-control"
                       id="phoneNumber"
                       formControlName="phoneNumber"
                       placeholder="Enter phone"
+                      required
                     />
                   </div>
                 </div>
@@ -71,11 +76,12 @@
                       id="emailAddress"
                       formControlName="emailAddress"
                       placeholder="Email ID"
+                      required
                     />
                   </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-7" style="margin:auto;">
                   <div class="form-group">
                     <button class="btn-submit">Submit</button>
                   </div>
