@@ -40,20 +40,22 @@ export class addContactusComponent implements OnInit {
   }
 
   contactData() {
-    if(this.data.ID== null){
+    if(this.data== null){
     this.api.addContact(this.contactForm.value).subscribe((response: any) => {
       this.router.navigate(["contactus"]);
     }, error => {
       console.log("error");
     });
   }else{
+  
     const formatData = this.contactForm.value;
     formatData.id = this.data.ID;
-    this.api.addContact(formatData).subscribe((response: any) => {
+    this.api.updateContact(formatData).subscribe((response: any) => {
       this.router.navigate(["contactus"]);
     }, error => {
       console.log("error");
     });
   }
 }
+
 }

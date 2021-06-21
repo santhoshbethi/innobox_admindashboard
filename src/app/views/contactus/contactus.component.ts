@@ -51,4 +51,25 @@ export class ContactusComponent {
     this.router.navigate(["edit-contactus"]);
 
   }
+  updateStatus(items: any,event){
+    let status : number;
+        if(event.checked)
+        {
+        status=0;
+        }
+        else
+        {
+          status=1;
+        }
+    
+    
+       this.api.updateContact({id:items.ID,status:status}).subscribe(data=> {
+    console.log(data);
+    
+       },
+       error =>{
+        console.log("error");
+       })
+    
+      }
 }
