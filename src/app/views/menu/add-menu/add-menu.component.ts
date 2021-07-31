@@ -32,6 +32,7 @@ export class AddMenuComponent {
     var obj = sessionStorage.getItem("data");
     this.data = JSON.parse(obj);
     if (this.data) {
+    
       this.menuForm.patchValue(this.data);
       this.menuForm.controls.menuname.setValue(this.data.itemName);
       this.menuForm.controls.parent.setValue(this.data.refID);
@@ -51,6 +52,7 @@ export class AddMenuComponent {
 
       if (res.message) {
         this.rows = res.message;
+        console.log(this.rows);
 
       } else {
         console.log("errror", res);

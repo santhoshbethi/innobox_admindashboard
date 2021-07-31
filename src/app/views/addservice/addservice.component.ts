@@ -1,8 +1,9 @@
- import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { isJSDocThisTag } from "typescript";
 import { ApiService } from "../../services/api.service";
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-addservice',
@@ -13,6 +14,13 @@ export class addServicesComponent implements OnInit {
   id: any;
   serviceID: any;
   rows: any;
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '7rem',
+    placeholder: 'Enter text here...'
+};
 
   constructor(
     private _fb: FormBuilder,
@@ -25,6 +33,7 @@ export class addServicesComponent implements OnInit {
       fulldcr: ["", Validators.required],
       title: ["", Validators.required],
       menuid: ["", Validators.required],
+      havetried: ["", Validators.required],
     });
   }
 
@@ -75,11 +84,12 @@ export class addServicesComponent implements OnInit {
   fetchData() {
     const formatData = this.formatData(this.id);
     this.api.getServicesById(formatData).subscribe((response: any) => {
-      console.log("here");
-      response.message[0].maindata[0].qtxt = response.message[0].maindata[0].qtxt;
+   
+      response.message[0].maindata[0].quicktext = response.message[0].maindata[0].qtxt;
       response.message[0].maindata[0].shortdescr = response.message[0].maindata[0].shdcr;
       response.message[0].maindata[0].fulldcr = response.message[0].maindata[0].fdcr;
       response.message[0].maindata[0].menuid = response.message[0].maindata[0].serviceID;
+      response.message[0].maindata[0].havetried = response.message[0].maindata[0].havetried;
       this.id = response.message[0].maindata[0].ID;
       this.serviceForm.patchValue(response.message[0].maindata[0])
     }, error => {

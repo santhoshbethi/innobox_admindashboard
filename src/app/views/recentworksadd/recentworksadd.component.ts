@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: "app-dashboard",
@@ -12,6 +13,14 @@ export class rctwrksaddComponent implements OnInit {
   id: any;
   res: any;
   rows:any;
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '7rem',
+    placeholder: 'Enter text here...'
+};
+
   constructor(
     private _fb: FormBuilder,
     public api: ApiService,
@@ -96,8 +105,8 @@ export class rctwrksaddComponent implements OnInit {
       );
     } else {
       const formatData = this.contactForm.value;
-      formatData.id = this.id;
-      this.api.updateRctwrk(formatData).subscribe(
+      _form.append('id', this.id);
+      this.api.updateRctwrk(_form).subscribe(
         (response: any) => {
           this.router.navigate(["recentworks"]);
         },

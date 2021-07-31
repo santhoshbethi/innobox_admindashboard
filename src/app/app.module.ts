@@ -56,7 +56,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { AddImagesComponent } from './views/services/add-images/add-images.component';
 import { HighlightsComponent } from './views/services/highlights/highlights.component';
+import {homeSliderComponent} from "./views/home/homeSlider/homeslider.component";
+import {addHomeSliderComponent} from "./views/home/addhomesliderimages/addhomeslider.component";
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import {StaticComponent} from "./views/staticdata/staticdata.component";
+import {testimonialsComponent} from "./views/testimonials/testimonials.component";
+import {addtestimoialsComponent} from "./views/testimonials/addtestimonials/addtestimoials.component";
+import {addTopImagesComponent} from "./views/home/addtopimages/addtopimages.component";
+import {whyinbComponent} from "./views/whyinb/whyinb.component";
+import {addwhyinbComponent} from "./views/whyinb/addwhyinb/addwhyinb.component";
 
+import {whyusComponent} from "./views/whyUs/whyus.component";
+import {addwhyusComponent} from "./views/whyUs/addwhyus/addwhyus.component";
+
+import {emptlkComponent} from "./views/emptlk/emptlk.component";
+import {addemptlkComponent} from "./views/emptlk/addemptlk/addemptlk.component";
+import {topImagesComponent} from "./views/home/topimages/topimages.component";
 
 
 
@@ -89,6 +104,7 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     MatSelectModule,
     IconSetModule.forRoot(),
     HttpClientModule,
+     AngularEditorModule 
     
   ],
   declarations: [
@@ -113,6 +129,19 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     AddMenuComponent,
     AddImagesComponent,
     HighlightsComponent,
+    StaticComponent,
+    testimonialsComponent,
+    addtestimoialsComponent,
+    whyinbComponent,
+    addwhyinbComponent,
+    whyusComponent,
+    addwhyusComponent,
+    emptlkComponent,
+    addemptlkComponent,
+    homeSliderComponent,
+    addHomeSliderComponent,
+    addTopImagesComponent,
+    topImagesComponent
   ],
   exports:[
 MatSlideToggleModule

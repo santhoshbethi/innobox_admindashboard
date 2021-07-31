@@ -167,6 +167,7 @@ h3,
   flex-wrap: wrap;
 }
 
+
 .col,
 .col-xl-6 {
   position: relative;
@@ -935,10 +936,12 @@ figcaption,
 main {
   display: block;
 }
-
-main {
-  overflow: hidden;
+.card-footer{
+  display: none;
 }
+// main {
+//   overflow: hidden;
+// }
 
 @keyframes floating-lg {
   0% {
@@ -1606,4 +1609,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+.app-body{
+  overflow: auto;
 }

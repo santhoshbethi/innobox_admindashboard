@@ -14,79 +14,50 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="company">Locaiton</label>
+                    <label for="company">Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="locationName"
-                      formControlName="locationName"
-                      placeholder="Enter location"
+                      id="title"
+                      formControlName="title"
+                      placeholder="Ttile"
                       required
                     />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="vat">Country</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="locationCountry"
-                      formControlName="locationCountry"
-                      placeholder="enter Country"
-                      required
-                    />
-                  </div>
+                    <label for="Parent">Select Parent</label>
+                  <select id="Parent" name="select3" class="form-control form-control-sm" formControlName="category">
+                    <option value="Process Details" selected>Process Details</option>
+                    <option value="Association Details">Association Details</option>
+                    <option value="Certification">Certification</option>
+                  
+                    
+                  </select>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="street">Address</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="locationAddress"
-                      formControlName="locationAddress"
-                      placeholder="Enter address"
-                      required
-                    />
-                  </div>
+              </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="city">Phone</label>
-                    <input 
-                      type="number"
-                      pattern="[+]{-}{1}[0-9]{11,14}"
-                      class="form-control"
-                      id="phoneNumber"
-                      formControlName="phoneNumber"
-                      placeholder="Enter phone"
-                      required
-                    />
-                  </div>
-                </div>
+                <div class="row">
+                  <div class="col-md-12">
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="postal-code">Email</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="emailAddress"
-                      formControlName="emailAddress"
-                      placeholder="Email ID"
-                      required
-                    />
+                    <div class="form-group">
+                      <label for="company">Content</label>
+                      <angular-editor id="content" formControlName="content" placeholder="Add content"
+                      [config]="config"></angular-editor>
+                     
+                    </div>
                   </div>
-                </div>
-
+                 
+                  
+              </div>
                 <div class="col-md-7" style="margin:auto;">
                   <div class="form-group">
                     <button class="btn-submit">Submit</button>
                   </div>
                 </div>
-              </div>
+              
             </form>
             </div>
             </div>

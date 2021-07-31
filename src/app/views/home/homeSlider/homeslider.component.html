@@ -1,7 +1,7 @@
 <div class="card shadow">
   <div class="card-header border-0">
-    <h3 class="mb-0">Menu</h3>
-    <button class="mb-0 btn-add" (click)="addMenu()">Add</button>
+    <h3 class="mb-0">Career Management</h3>
+    <button class="mb-0 btn-add" (click)="addcareer()">Add</button>
   </div>
 
   <div class="table-responsive">
@@ -19,22 +19,25 @@
       </thead>
       <tbody>
         <tr *ngFor="let items of rows; let i = index" :key="index">
-         
-          <td>{{ items.ID }}</td>
-          <td>{{ items.itemName}}</td>
-          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p 
-            (click)="editCareer(items.ID)"
-            >
-            <i class="nav-icon icon-pencil"></i>
-          </p></td>
-          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p 
-            (click)="editCareer(items.ID)"
-            >
-            <i class="nav-icon icon-pencil"></i>
-          </p></td>
+          <th scope="row">
+            <div class="media align-items-center">
+              <div class="media-body">
+                <span class="mb-0 text-sm">{{ items.title }}</span>
+              </div>
+            </div>
+          </th>
+          <td>{{ items.text }}</td>
         
+
+          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
+          
+            <p 
+            (click)="updateHomeslder(items)"
+            >
+            <i class="nav-icon icon-pencil"></i>
+          </p>
+
         </tr>
       </tbody>
     </table>

@@ -8,6 +8,7 @@ import { HttpHeaders } from "@angular/common/http";
 export const environment = {
   production: false,
   headers: new HttpHeaders().set("accept", "application/json"),
-  apiUrl:
-    "http://ec2-35-154-205-221.ap-south-1.compute.amazonaws.com:8080/api/",
+  apiUrl:    "https://innobox.com:8080/api/",
+ //apiUrl:"http://localhost:8080/api/",
+  imageUrl: 'https://innobox.com:8080',
 };

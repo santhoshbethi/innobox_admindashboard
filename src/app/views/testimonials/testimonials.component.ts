@@ -3,33 +3,38 @@ import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
 
 @Component({
-  selector: "app-dashboard",
-  templateUrl: "contactus.component.html",
+  selector: "app-testimonials",
+  templateUrl: "testimonials.component.html",
 })
-export class ContactusComponent {
+export class testimonialsComponent {
   rows: any;
   columns: any;
   constructor(public api: ApiService, private router: Router) {}
   ngOnInit() {
-    this.getContact();
+    this.getService();
     this.columns = [
       {
         title: "S No",
         field: "ID",
       },
       {
-        title: "Location Name",
-        field: "locationName",
+        title: "Name",
+        field: "customerName",
       },
       {
-        title: "Address",
-        field: "locationAddress",
+        title: "Comment",
+        field: "content",
       },
+    
+      {
+        title: "Action",
+        field: "action",
+      }
      
     ];
   }
-  getContact() {
-    this.api.getContact().subscribe((response) => {
+  getService() {
+    this.api.getTestimonials().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
       console.log(res);
       if (res.message) {
@@ -40,15 +45,21 @@ export class ContactusComponent {
     });
   }
 
-  addaddress() {
-    console.log("hello");
+  addservices() {
 
-    this.router.navigate(["add-contactus"]);
+
+    this.router.navigate(["addtestimonials"]);
   }
 
-  editDetails(data){
+  // highlights(id){
+   
+
+  //   this.router.navigate(["add-services",id]);
+  // }
+
+  editServices(data){
     sessionStorage.setItem('data', JSON.stringify(data));
-    this.router.navigate(["edit-contactus"]);
+    this.router.navigate(["addtestimonials"]);
 
   }
   updateStatus(items: any,event){
@@ -63,7 +74,7 @@ export class ContactusComponent {
         }
     
     
-       this.api.updateContact({id:items.ID,status:status}).subscribe(data=> {
+       this.api.updateTestimonials({id:items.ID,status:status}).subscribe(data=> {
     console.log(data);
     
        },
@@ -72,4 +83,6 @@ export class ContactusComponent {
        })
     
       }
+
+ 
 }

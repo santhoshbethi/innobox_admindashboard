@@ -59,6 +59,7 @@
                       class="form-control"
                       type="text"
                       id="Position"
+                      min='1'
                       formControlName="opens"
                       placeholder="Position"
                       type="number"
@@ -67,24 +68,26 @@
                 </div>
                
 
-                <div class="col-md-6">
+                <div class="col-md-6" style="display: none;">
                   <div class="form-group">
                     <!-- helps space out sections of the form -->
-                    <label for="inputName">Status</label>
+                    <label for="status">Status</label>
                     <div class="select-dropdown">
-                      <select  #rate ngModel="hr">
-                        <option  value="0">Active</option>
-                        <option value="1">Inactive</option>
-                    </select>
+                      <select  ngModel="hr" id="status">
+                        <option selected value="0">Active</option>
+                        <option value="0">Inactive</option>
+                       
+                      </select>
+                    
                     
                     </div>
                   </div>
                 </div>
-
+               
                 <div class="col-md-6">
                   <div class="form-group">
                     <!-- helps space out sections of the form -->
-                    <label for="inputName">Image</label>
+                    <label for="inputName">Image (350 X 219)</label>
                     <div class="file-input">
                       <input type="file" #fileInput formControlName="file" id="file" (change)="uploadFileEvt($event)" multiple="multiple" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/svg"
                        required />
@@ -93,17 +96,13 @@
                 </div>
 
                 <div class="col-md-12">
+                  
                   <div class="form-group">
+                    <label for="description">Description</label> 
+                    <angular-editor id="eventdesc" formControlName="description" id="description" placeholder="Add Description"
+                    [config]="config"></angular-editor>
                     <!-- helps space out sections of the form -->
-                    <label for="description">Description</label>
-                    <textarea
-                      class="form-control"
-                     
-                      id="description"
-                      formControlName="description"
-                      placeholder="Description"
-                      required
-                    ></textarea>
+                    
 
                   </div>
                   

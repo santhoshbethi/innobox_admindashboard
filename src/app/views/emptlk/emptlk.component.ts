@@ -2,34 +2,40 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { ApiService } from "../../services/api.service";
 
+
 @Component({
-  selector: "app-dashboard",
-  templateUrl: "contactus.component.html",
+  selector: "app-emptlk",
+  templateUrl: "emptlk.component.html",
 })
-export class ContactusComponent {
+export class emptlkComponent {
   rows: any;
   columns: any;
   constructor(public api: ApiService, private router: Router) {}
   ngOnInit() {
-    this.getContact();
+    this.getService();
     this.columns = [
       {
         title: "S No",
         field: "ID",
       },
       {
-        title: "Location Name",
-        field: "locationName",
+        title: "Name",
+        field: "name",
       },
       {
-        title: "Address",
-        field: "locationAddress",
+        title: "Review",
+        field: "message",
       },
+    
+      {
+        title: "Content",
+        field: "content",
+      }
      
     ];
   }
-  getContact() {
-    this.api.getContact().subscribe((response) => {
+  getService() {
+    this.api.getemptlk().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
       console.log(res);
       if (res.message) {
@@ -40,15 +46,16 @@ export class ContactusComponent {
     });
   }
 
-  addaddress() {
-    console.log("hello");
+  addservices() {
 
-    this.router.navigate(["add-contactus"]);
+
+    this.router.navigate(["addemptlk"]);
   }
 
-  editDetails(data){
+
+  editServices(data){
     sessionStorage.setItem('data', JSON.stringify(data));
-    this.router.navigate(["edit-contactus"]);
+    this.router.navigate(["addemptlk"]);
 
   }
   updateStatus(items: any,event){
@@ -63,7 +70,7 @@ export class ContactusComponent {
         }
     
     
-       this.api.updateContact({id:items.ID,status:status}).subscribe(data=> {
+       this.api.updateemptlk({id:items.ID,status:status}).subscribe(data=> {
     console.log(data);
     
        },
@@ -72,4 +79,6 @@ export class ContactusComponent {
        })
     
       }
+
+ 
 }

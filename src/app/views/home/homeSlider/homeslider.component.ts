@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { ApiService } from "../../services/api.service";
+import { ApiService } from "../../../services/api.service";
 
 @Component({
   selector: "app-dashboard",
@@ -15,21 +15,14 @@ export class homeSliderComponent {
     this.getHomeSlider();
     this.columns = [
       {
-        title: "Job Title",
-        field: "jobTitle",
+        title: "Name",
+        field: "title",
       },
       {
-        title: "Location",
-        field: "locationCountry",
+        title: "Heading",
+        field: "Heading",
       },
-      {
-        title: "Open Position",
-        field: "opens",
-      },
-      {
-        title: "Experience",
-        field: "experience",
-      },
+     
     
       {
         title: "Action",
@@ -40,7 +33,7 @@ export class homeSliderComponent {
   getHomeSlider() {
     this.api.getHomeSliders().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
-      console.log(res);
+
       if (res.message) {
         this.rows = res.message;
       } else {
@@ -49,15 +42,15 @@ export class homeSliderComponent {
     });
   }
 
-  updateCareer(id){
-    this.router.navigate(['edit-career']);
-    sessionStorage.setItem('id', id);
+  updateHomeslder(data:any){
+    this.router.navigate(['add-homeslider']);
+    sessionStorage.setItem('data', JSON.stringify(data));
     // sessionStorage.setItem('isEditClicked', 'true');
   }
 
   addcareer() {
    sessionStorage.removeItem('id');
-    this.router.navigate(["add-career"]);
+    this.router.navigate(["add-homeslider"]);
     // sessionStorage.setItem('isEditClicked', 'true');
 
   }
@@ -73,7 +66,7 @@ let status : number;
     }
 
 
-   this.api.updateCareer({id:items.ID,status:status}).subscribe(data=> {
+   this.api.updateSliderImage({id:items.ID,status:status}).subscribe(data=> {
 console.log(data);
 
    },

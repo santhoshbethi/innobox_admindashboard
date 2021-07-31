@@ -2,7 +2,11 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
  
- 
+  {
+    name: 'Home ',
+    url: '/home',
+    icon: 'icon-pie-chart'
+  },
   {
     name: 'Menu',
     url: '/menu',
@@ -22,15 +26,36 @@ export const navItems: INavData[] = [
   },
 
   {
-    name: 'Home ',
-    url: '/home',
+    name: 'Main Page ',
+    url: '/home-data',
     icon: 'icon-pie-chart'
   },
   {
-    name: 'Home sliderimages ',
-    url: '/homeimages',
+    name: 'Employee Talk  ',
+    url: '/emptlk',
     icon: 'icon-pie-chart'
   },
+  {
+    name: 'Testimonials ',
+    url: '/testimonials',
+    icon: 'icon-pie-chart'
+  },
+  {
+    name: 'About Us ',
+    url: '/aboutus',
+    icon: 'icon-pie-chart'
+  },
+  {
+    name: 'Why Innobox ',
+    url: '/whyinnobox',
+    icon: 'icon-pie-chart'
+  },
+  {
+    name: 'Why Us ',
+    url: '/whyus',
+    icon: 'icon-pie-chart'
+  },
+  
   {
     name: 'Recent Works',
     url: '/recentworks',

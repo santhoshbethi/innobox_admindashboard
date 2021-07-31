@@ -21,13 +21,27 @@ import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
 import { AddMenuComponent } from "./views/menu/add-menu/add-menu.component";
 import { AddImagesComponent } from "./views/services/add-images/add-images.component";
 import { HighlightsComponent } from "./views/services/highlights/highlights.component";
-import {homeSliderComponent} from "./views/homeSlider/homeslider.component";
-import {addHomeSliderComponent} from "./views/addhomeslider/addhomeslider.component";
+import {homeSliderComponent} from "./views/home/homeSlider/homeslider.component";
+import {addHomeSliderComponent} from "./views/home/addhomesliderimages/addhomeslider.component";
+import {addTopImagesComponent} from "./views/home/addtopimages/addtopimages.component";
+import {topImagesComponent} from "./views/home/topimages/topimages.component";
+import {StaticComponent} from "./views/staticdata/staticdata.component";
+import {testimonialsComponent} from "./views/testimonials/testimonials.component";
+import {addtestimoialsComponent} from "./views/testimonials/addtestimonials/addtestimoials.component";
+import {whyinbComponent} from "./views/whyinb/whyinb.component";
+import {addwhyinbComponent} from "./views/whyinb/addwhyinb/addwhyinb.component";
+import {whyusComponent} from "./views/whyUs/whyus.component";
+import {addwhyusComponent} from "./views/whyUs/addwhyus/addwhyus.component";
+//import {addstaticComponent} from "./views/staticdata/addstaticdata.component";
+import {emptlkComponent} from "./views/emptlk/emptlk.component";
+import {addemptlkComponent} from "./views/emptlk/addemptlk/addemptlk.component";
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: "dashboard",
-    pathMatch: "full",
+    component: LoginComponent,
+    data: {
+      title: "Login Page",
+    },
   },
   {
     path: "404",
@@ -80,6 +94,46 @@ export const routes: Routes = [
       {
         path: "services",
         component: ServicesComponent,
+      },
+      {
+        path: "testimonials",
+        component: testimonialsComponent,
+      },
+      {
+        path: "addtestimonials",
+        component: addtestimoialsComponent,
+      },
+      {
+        path: "testimonials",
+        component: testimonialsComponent,
+      },
+      {
+        path: "emptlk",
+        component: emptlkComponent,
+      },
+      {
+        path: "addemptlk",
+        component: addemptlkComponent,
+      },
+      {
+        path: "whyus",
+        component: whyusComponent,
+      },
+      {
+        path: "addwhyus",
+        component: addwhyusComponent,
+      },
+      {
+        path: "addwhyinb",
+        component: addwhyinbComponent,
+      },
+      {
+        path: "whyinnobox",
+        component: whyinbComponent,
+      },
+      {
+        path: "home-data",
+        component: StaticComponent,
       },
       {
         path: "add-services",
@@ -152,6 +206,14 @@ export const routes: Routes = [
       {
         path:"homeslider",
         component:homeSliderComponent,
+      },
+      {
+        path:"addtopimages",
+        component:addTopImagesComponent,
+      },
+      {
+        path:"topimages",
+        component:topImagesComponent,
       },
       {
         path:"add-homeslider",

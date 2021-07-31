@@ -1,18 +1,14 @@
 <div class="card shadow">
   <div class="card-header border-0">
-    <h3 class="mb-0">Career Management</h3>
-    <button class="mb-0 btn-add" (click)="addcareer()">Add</button>
+    <h3 class="mb-0">Service Management</h3>
+    <button class="mb-0 btn-add" (click)="addservices()">Add</button>
   </div>
 
   <div class="table-responsive">
-    <table class="table align-items-center table-flush">
+    <table class="table align-items-center table-flush" style="table-layout: fixed; width: 100%">
       <thead class="thead-light">
         <tr>
-          <th
-            *ngFor="let items of columns; let i = index"
-            :key="index"
-            scope="col"
-          >
+          <th *ngFor="let items of columns; let i = index" :key="index" scope="col">
             {{ items.title }}
           </th>
         </tr>
@@ -22,23 +18,28 @@
           <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{ items.jobTitle }}</span>
+                <span class="mb-0 text-sm">{{ items.ID }}</span>
               </div>
             </div>
           </th>
-          <td>{{ items.locationCountry }}</td>
-          <td>{{ items.opens }}</td>
-          <td>{{ items.experience }}</td>
+          <td>{{ items.name }}</td>
+         
+          <td style="overflow: hidden;text-overflow: ellipsis;">{{ items.message }}</td>
+          <!-- <td>{{ items.fdcr }}</td>
+                            <td>{{ items.shdcr }}</td> -->
+          <td> <button mat-icon-button aria-label="Toggle star" (click)="editServices(items)"
+              style="color: blue">
+              <mat-icon class="material-icons" color="primary">edit</mat-icon>
+            </button></td>
 
-          <mat-cell><span class="action"></span>
-          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-          <button mat-icon-button aria-label="Toggle star"
-          (click)="updateCareer(items.ID)"
-          style="color: blue">
-          <mat-icon class="material-icons" color="primary">edit</mat-icon>
-        </button>
-          </mat-cell>
+
+          <td *ngIf="items.status === '0'">
+            <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+          </td>
+          <td *ngIf="items.status === '1'">
+            <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+          </td>
+
         </tr>
       </tbody>
     </table>
@@ -56,9 +57,7 @@
           <a class="page-link" href="#">1</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#"
-            >2 <span class="sr-only">(current)</span></a
-          >
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
         </li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">

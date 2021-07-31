@@ -32,6 +32,7 @@ export class MenuComponent {
   getMenu() {
     this.api.getMenu().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
+      console.log(res);
       
       if (res.message) {
         this.rows = res.message;
