@@ -1,18 +1,14 @@
 <div class="card shadow">
   <div class="card-header border-0">
     <h3 class="mb-0">Career Management</h3>
-    <button class="mb-0 btn-add" (click)="addcareer()">Add</button>
+    <button class="mb-0 btn-add" (click)="addTopImages()">Add</button>
   </div>
 
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th
-            *ngFor="let items of columns; let i = index"
-            :key="index"
-            scope="col"
-          >
+          <th *ngFor="let items of columns; let i = index" :key="index" scope="col">
             {{ items.title }}
           </th>
         </tr>
@@ -27,14 +23,16 @@
             </div>
           </th>
           <td>{{ items.text }}</td>
-        
 
-          <td *ngIf="items.status === '0'"><mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-          <td *ngIf="items.status === '1'"><mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle></td>
-          
-            <p 
-            (click)="updateHomeslder(items)"
-            >
+
+          <td *ngIf="items.status === '0'">
+            <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+          </td>
+          <td *ngIf="items.status === '1'">
+            <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+          </td>
+
+          <p (click)="updateTopImages(items)">
             <i class="nav-icon icon-pencil"></i>
           </p>
 
@@ -55,9 +53,7 @@
           <a class="page-link" href="#">1</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#"
-            >2 <span class="sr-only">(current)</span></a
-          >
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
         </li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">

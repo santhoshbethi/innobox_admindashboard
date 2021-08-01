@@ -1,11 +1,11 @@
-<div class="card shadow app-body">
+<div class="card shadow">
   <div class="card-header border-0">
-    <h3 class="mb-0">Career Management</h3>
-    <button class="mb-0 btn-add" (click)="addcareer()">Add</button>
+    <h3 class="mb-0">About Us</h3>
+    <button class="mb-0 btn-add" (click)="addservices()">Add</button>
   </div>
 
   <div class="table-responsive">
-    <table class="table align-items-center table-flush">
+    <table class="table align-items-center table-flush" style="table-layout: fixed; width: 100%">
       <thead class="thead-light">
         <tr>
           <th *ngFor="let items of columns; let i = index" :key="index" scope="col">
@@ -18,29 +18,25 @@
           <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{ items.jobTitle }}</span>
+                <span class="mb-0 text-sm">{{ items.ID }}</span>
               </div>
             </div>
           </th>
-          <td>{{ items.locationCountry }}</td>
-          <td>{{ items.opens }}</td>
-          <td>{{ items.experience }}</td>
+          <td>{{ items.title }}</td>
+          <td style="overflow: hidden;text-overflow: ellipsis;">{{ items.value }}</td>
+          <!-- <td>{{ items.fdcr }}</td>
+                            <td>{{ items.shdcr }}</td> -->
+          <td> <button mat-icon-button aria-label="Toggle star" (click)="editServices(items)" style="color: blue">
+              <mat-icon class="material-icons" color="primary">edit</mat-icon>
+            </button></td>
 
 
           <td *ngIf="items.status === '0'">
-            <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p (click)="updateCareer(items.ID)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
+            <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
           </td>
           <td *ngIf="items.status === '1'">
-            <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p (click)="updateCareer(items.ID)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
+            <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
           </td>
-
-
 
         </tr>
       </tbody>

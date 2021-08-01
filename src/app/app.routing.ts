@@ -14,27 +14,32 @@ import { ServicesComponent } from "./views/services/services.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { ContactusComponent } from "./views/contactus/contactus.component";
 import { addContactusComponent } from "./views/addcontactus/addcontactus.component";
-import {recentWorkcatComponent} from "./views/recentworkscategory/recentworkscat.component";
-import {rctwrkcatgoryaddComponent} from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
-import {recentWorksComponent} from "./views/rcntwrk/rcntwrks.component";
- import {rctwrksaddComponent} from "./views/recentworksadd/recentworksadd.component"
+import { recentWorkcatComponent } from "./views/recentworkscategory/recentworkscat.component";
+import { rctwrkcatgoryaddComponent } from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
+import { recentWorksComponent } from "./views/rcntwrk/rcntwrks.component";
+import { rctwrksaddComponent } from "./views/recentworksadd/recentworksadd.component"
 import { AddMenuComponent } from "./views/menu/add-menu/add-menu.component";
 import { AddImagesComponent } from "./views/services/add-images/add-images.component";
 import { HighlightsComponent } from "./views/services/highlights/highlights.component";
-import {homeSliderComponent} from "./views/home/homeSlider/homeslider.component";
-import {addHomeSliderComponent} from "./views/home/addhomesliderimages/addhomeslider.component";
-import {addTopImagesComponent} from "./views/home/addtopimages/addtopimages.component";
-import {topImagesComponent} from "./views/home/topimages/topimages.component";
-import {StaticComponent} from "./views/staticdata/staticdata.component";
-import {testimonialsComponent} from "./views/testimonials/testimonials.component";
-import {addtestimoialsComponent} from "./views/testimonials/addtestimonials/addtestimoials.component";
-import {whyinbComponent} from "./views/whyinb/whyinb.component";
-import {addwhyinbComponent} from "./views/whyinb/addwhyinb/addwhyinb.component";
-import {whyusComponent} from "./views/whyUs/whyus.component";
-import {addwhyusComponent} from "./views/whyUs/addwhyus/addwhyus.component";
+import { homeSliderComponent } from "./views/home/homeSlider/homeslider.component";
+import { addHomeSliderComponent } from "./views/home/addhomesliderimages/addhomeslider.component";
+import { addtopImagesComponent } from "./views/home/addtopimages/addtopimages.component";
+import { topImagesComponent } from "./views/home/topimages/topimages.component";
+import { StaticComponent } from "./views/staticdata/staticdata.component";
+import { testimonialsComponent } from "./views/testimonials/testimonials.component";
+import { addtestimoialsComponent } from "./views/testimonials/addtestimonials/addtestimoials.component";
+import { whyinbComponent } from "./views/whyinb/whyinb.component";
+import { addwhyinbComponent } from "./views/whyinb/addwhyinb/addwhyinb.component";
+import { whyusComponent } from "./views/WhyUS/whyus.component";
+import { addwhyusComponent } from "./views/WhyUS/addwhyus/addwhyus.component";
+import { whatwedoCounterComponent } from "./views/home/whatwedoCounter/whatwedocounter.component";
+import { addwhatwedocounterComponent } from "./views/home/whatwedoCounter/addwhatwedocounter/addwhatwedocounter.component";
+import { aboutusComponent } from "./views/aboutus/aboutus.component";
+import { addaboutusComponent } from "./views/aboutus/addaboutus/addaboutus.component";
+
 //import {addstaticComponent} from "./views/staticdata/addstaticdata.component";
-import {emptlkComponent} from "./views/emptlk/emptlk.component";
-import {addemptlkComponent} from "./views/emptlk/addemptlk/addemptlk.component";
+import { emptlkComponent } from "./views/emptlk/emptlk.component";
+import { addemptlkComponent } from "./views/emptlk/addemptlk/addemptlk.component";
 export const routes: Routes = [
   {
     path: "",
@@ -204,20 +209,36 @@ export const routes: Routes = [
         component: HighlightsComponent,
       },
       {
-        path:"homeslider",
-        component:homeSliderComponent,
+        path: "homeslider",
+        component: homeSliderComponent,
       },
       {
-        path:"addtopimages",
-        component:addTopImagesComponent,
+        path: "addtopimages",
+        component: addtopImagesComponent,
       },
       {
-        path:"topimages",
-        component:topImagesComponent,
+        path: "topimages",
+        component: topImagesComponent,
       },
       {
-        path:"add-homeslider",
-        component:addHomeSliderComponent,
+        path: "add-homeslider",
+        component: addHomeSliderComponent,
+      },
+      {
+        path: "whatwedocounter",
+        component: whatwedoCounterComponent,
+      },
+      {
+        path: "edit-staticdata",
+        component: addwhatwedocounterComponent,
+      },
+      {
+        path: "aboutus",
+        component: aboutusComponent,
+      },
+      {
+        path: "addaboutus",
+        component: addaboutusComponent,
       },
     ],
   },
@@ -227,4 +248,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -3,39 +3,41 @@ import { Router } from "@angular/router";
 import { ApiService } from "../../../services/api.service";
 
 @Component({
-  selector: "app-topimages",
-  templateUrl: "topimages.component.html",
+  selector: "app-whatwedocounter",
+  templateUrl: "whatwedocounter.component.html",
 })
-export class topImagesComponent {
-
+export class whatwedoCounterComponent {
   rows: any;
   columns: any;
   flag: any = true;
   constructor(public api: ApiService, private router: Router) { }
   ngOnInit() {
-    this.getTopImages();
+    this.getStaticData();
     this.columns = [
       {
-        title: "Name",
+        title: "ID",
+        field: "ID",
+      },
+      {
+        title: "Title",
         field: "title",
       },
       {
-        title: "Text",
-        field: "text",
+        title: "Count",
+        field: "value",
       },
-
       {
         title: "Action",
         field: "action",
       },
+
     ];
   }
-  getTopImages() {
-    this.api.getTopImages().subscribe((response) => {
+  getStaticData() {
+    this.api.getStaticData().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
-
+      console.log(res);
       if (res.message) {
-        console.log(res)
         this.rows = res.message;
       } else {
         console.log("errror", res);
@@ -43,31 +45,23 @@ export class topImagesComponent {
     });
   }
 
-  updateTopImages(data: any) {
-    console.log(data);
-    this.router.navigate(['addtopimages']);
+  editServices(data) {
     sessionStorage.setItem('data', JSON.stringify(data));
-    // sessionStorage.setItem('isEditClicked', 'true');
-  }
-
-  addTopImages() {
-    sessionStorage.removeItem('id');
-    this.router.navigate(["addtopimages"]);
-    // sessionStorage.setItem('isEditClicked', 'true');
+    this.router.navigate(["edit-staticdata"]);
 
   }
+
   updateStatus(items: any, event) {
+
     let status: number;
-    alert(event.checked)
-    if (event.checked == true) {
-      status = 1;
-    }
-    else {
+    if (event.checked) {
       status = 0;
     }
+    else {
+      status = 1;
+    }
 
-
-    this.api.updateTopImages({ id: items.ID, status: status }).subscribe(data => {
+    this.api.updateStaticData({ ID: items.ID, status: status }).subscribe(data => {
       console.log(data);
 
     },
@@ -77,3 +71,4 @@ export class topImagesComponent {
 
   }
 }
+

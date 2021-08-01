@@ -8,7 +8,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import {
   AppAsideModule,
@@ -52,28 +52,30 @@ import { recentWorkcatComponent } from "./views/recentworkscategory/recentworksc
 import { rctwrkcatgoryaddComponent } from "./views/rctwrkcatgoryadd/rctwrkcatgoryadd.component";
 import { rctwrksaddComponent } from "./views/recentworksadd/recentworksadd.component";
 import { AddMenuComponent } from './views/menu/add-menu/add-menu.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { AddImagesComponent } from './views/services/add-images/add-images.component';
 import { HighlightsComponent } from './views/services/highlights/highlights.component';
-import {homeSliderComponent} from "./views/home/homeSlider/homeslider.component";
-import {addHomeSliderComponent} from "./views/home/addhomesliderimages/addhomeslider.component";
+import { homeSliderComponent } from "./views/home/homeSlider/homeslider.component";
+import { addHomeSliderComponent } from "./views/home/addhomesliderimages/addhomeslider.component";
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import {StaticComponent} from "./views/staticdata/staticdata.component";
-import {testimonialsComponent} from "./views/testimonials/testimonials.component";
-import {addtestimoialsComponent} from "./views/testimonials/addtestimonials/addtestimoials.component";
-import {addTopImagesComponent} from "./views/home/addtopimages/addtopimages.component";
-import {whyinbComponent} from "./views/whyinb/whyinb.component";
-import {addwhyinbComponent} from "./views/whyinb/addwhyinb/addwhyinb.component";
+import { StaticComponent } from "./views/staticdata/staticdata.component";
+import { testimonialsComponent } from "./views/testimonials/testimonials.component";
+import { addtestimoialsComponent } from "./views/testimonials/addtestimonials/addtestimoials.component";
+import { addtopImagesComponent } from "./views/home/addtopimages/addtopimages.component";
+import { whyinbComponent } from "./views/whyinb/whyinb.component";
+import { addwhyinbComponent } from "./views/whyinb/addwhyinb/addwhyinb.component";
+import { whatwedoCounterComponent } from "./views/home/whatwedoCounter/whatwedocounter.component"
+import { whyusComponent } from "./views/WhyUS/whyus.component";
+import { addwhyusComponent } from "./views/WhyUS/addwhyus/addwhyus.component";
 
-import {whyusComponent} from "./views/whyUs/whyus.component";
-import {addwhyusComponent} from "./views/whyUs/addwhyus/addwhyus.component";
+import { emptlkComponent } from "./views/emptlk/emptlk.component";
+import { addemptlkComponent } from "./views/emptlk/addemptlk/addemptlk.component";
+import { addwhatwedocounterComponent } from "./views/home/whatwedoCounter/addwhatwedocounter/addwhatwedocounter.component";
+import { topImagesComponent } from "./views/home/topimages/topimages.component";
 
-import {emptlkComponent} from "./views/emptlk/emptlk.component";
-import {addemptlkComponent} from "./views/emptlk/addemptlk/addemptlk.component";
-import {topImagesComponent} from "./views/home/topimages/topimages.component";
-
-
+import { aboutusComponent } from "./views/aboutus/aboutus.component";
+import { addaboutusComponent } from "./views/aboutus/addaboutus/addaboutus.component";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -104,8 +106,8 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     MatSelectModule,
     IconSetModule.forRoot(),
     HttpClientModule,
-     AngularEditorModule 
-    
+    AngularEditorModule
+
   ],
   declarations: [
     AppComponent,
@@ -140,11 +142,15 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     addemptlkComponent,
     homeSliderComponent,
     addHomeSliderComponent,
-    addTopImagesComponent,
-    topImagesComponent
+    addtopImagesComponent,
+    topImagesComponent,
+    whatwedoCounterComponent,
+    addwhatwedocounterComponent,
+    aboutusComponent,
+    addaboutusComponent,
   ],
-  exports:[
-MatSlideToggleModule
+  exports: [
+    MatSlideToggleModule
   ],
   providers: [
     {
@@ -155,4 +161,4 @@ MatSlideToggleModule
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

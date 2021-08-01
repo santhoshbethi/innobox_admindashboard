@@ -1,61 +1,44 @@
-<div class="card shadow">
+<div class="card shadow app-body">
   <div class="card-header border-0">
-    <h3 class="mb-0">Static Data Management</h3>
-
+    <h3 class="mb-0">stack Management</h3>
   </div>
 
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-
-
-          <td>Name</td>
-          <td>Action</td>
-
+          <th *ngFor="let items of columns; let i = index" :key="index" scope="col">
+            {{ items.title }}
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let items of rows; let i = index" :key="index">
+          <td>{{ items.ID }}</td>
 
-          <td>Sliders Images Home page</td>
-          <td>
-            <p (click)="updateStat(1)">
+          <th scope="row">
+            <div class="media align-items-center">
+              <div class="media-body">
+                <span class="mb-0 text-sm">{{ items.title }}</span>
+              </div>
+            </div>
+          </th>
+          <td>{{ items.value }}</td>
+
+
+          <td *ngIf="items.status === '0'">
+            <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+            <p (click)="editServices(items.ID)">
+              <i class="nav-icon icon-pencil"></i>
+            </p>
+          </td>
+          <td *ngIf="items.status === '1'">
+            <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
+            <p (click)="editServices(items.ID)">
               <i class="nav-icon icon-pencil"></i>
             </p>
           </td>
 
-        </tr>
-        <tr>
-
-
-          <td>Statistics Home page</td>
-          <td>
-            <p (click)="updateStat(2)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
-          </td>
-        </tr>
-        <tr>
-
-
-          <td>Top Images and Headings</td>
-
-          <td>
-            <p (click)="updateStat(3)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Counter For: Products shipped, Employees, Customers, Saving for customers</td>
-
-          <td>
-            <p (click)="updateStat(4)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
-          </td>
         </tr>
       </tbody>
     </table>

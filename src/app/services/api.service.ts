@@ -40,6 +40,12 @@ export class ApiService {
       headers: this.headers,
     });
   }
+
+  getStaticData() {
+    return this.http.get(`${environment.apiUrl}home/getstaticdata`, {
+      headers: this.headers,
+    });
+  }
   getCat() {
     return this.http.get(`${environment.apiUrl}rectwrks/getcat`, {
       headers: this.headers,
@@ -85,8 +91,20 @@ export class ApiService {
       headers: this.headers,
     });
   }
+
+  getTopImages() {
+    return this.http.get(`${environment.apiUrl}home/gettopimg`, {
+      headers: this.headers,
+    });
+  }
+
   getwhyus() {
     return this.http.get(`${environment.apiUrl}home/getwhyus`, {
+      headers: this.headers,
+    });
+  }
+  getaboutus() {
+    return this.http.get(`${environment.apiUrl}home/getabtus`, {
       headers: this.headers,
     });
   }
@@ -108,13 +126,22 @@ export class ApiService {
       headers: this.headers,
     });
   }
+  addTopImage(data: any) {
+    return this.http.post(`${environment.apiUrl}home/addtopimg`, data, {
+      headers: this.headers,
+    });
+  }
   updateSliderImage(data: any) {
     return this.http.post(`${environment.apiUrl}home/updatesliderimage`, data, {
       headers: this.headers,
     });
   }
-  
-  
+  updateTopImages(data: any) {
+    return this.http.post(`${environment.apiUrl}home/updatetopimg`, data, {
+      headers: this.headers,
+    });
+  }
+
 
   login(data: any) {
 
@@ -152,6 +179,13 @@ export class ApiService {
       headers: this.headers,
     });
   }
+
+  updateStaticData(data: any) {
+    return this.http.post(`${environment.apiUrl}home/updatestaticdata`, data, {
+      headers: this.headers,
+    });
+  }
+
   updateTestimonials(data: any) {
 
     return this.http.post(`${environment.apiUrl}home/updatetestimonials`, data, {
@@ -161,6 +195,13 @@ export class ApiService {
   updatewhyus(data: any) {
 
     return this.http.post(`${environment.apiUrl}home/updatewhyus`, data, {
+      headers: this.headers,
+    });
+  }
+
+  updateaboutus(data: any) {
+
+    return this.http.post(`${environment.apiUrl}home/updateabtus`, data, {
       headers: this.headers,
     });
   }
@@ -187,6 +228,13 @@ export class ApiService {
   addwhyus(data: any) {
 
     return this.http.post(`${environment.apiUrl}home/addwhyus`, data, {
+      headers: this.headers,
+    });
+  }
+
+  addaboutus(data: any) {
+
+    return this.http.post(`${environment.apiUrl}home/addabtus`, data, {
       headers: this.headers,
     });
   }
