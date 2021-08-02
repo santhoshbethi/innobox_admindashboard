@@ -29,15 +29,12 @@ export class addtopImagesComponent implements OnInit {
       title: ["", Validators.required],
       text: ["", Validators.required],
       file: ["", Validators.required],
-
-
     });
   }
 
   ngOnInit(): void {
     var obj = sessionStorage.getItem("data");
     this.data = JSON.parse(obj);
-    console.log(this.data.ID);
     if (this.data) {
       this.sliderForm.patchValue(this.data);
     }
@@ -48,8 +45,7 @@ export class addtopImagesComponent implements OnInit {
   }
 
   addData() {
-    console.log(this.sliderForm);
-    // exit();
+
     if (this.sliderForm.get('title').value &&
       this.sliderForm.get('text').value) {
       let _form = new FormData();
@@ -57,9 +53,6 @@ export class addtopImagesComponent implements OnInit {
       _form.append('text', this.sliderForm.get('text').value);
 
       _form.append('file', this.sliderForm.get('file').value);
-
-
-
 
       if (this.data == null) {
 

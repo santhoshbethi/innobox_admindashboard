@@ -54,11 +54,11 @@ export class aboutusComponent {
   }
   updateStatus(items: any, event) {
     let status: number;
-    if (event.checked) {
-      status = 0;
+    if (event.checked == true) {
+      status = 1;
     }
     else {
-      status = 1;
+      status = 0;
     }
 
 

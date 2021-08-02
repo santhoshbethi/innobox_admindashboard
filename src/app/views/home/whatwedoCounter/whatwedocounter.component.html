@@ -28,17 +28,15 @@
 
           <td *ngIf="items.status === '0'">
             <mat-slide-toggle [checked]="true" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p (click)="editServices(items.ID)">
-              <i class="nav-icon icon-pencil"></i>
-            </p>
           </td>
           <td *ngIf="items.status === '1'">
             <mat-slide-toggle [checked]="false" (change)="updateStatus(items,$event)"></mat-slide-toggle>
-            <p (click)="editServices(items.ID)">
+          </td>
+          <td>
+            <p (click)="editServices(items)">
               <i class="nav-icon icon-pencil"></i>
             </p>
           </td>
-
         </tr>
       </tbody>
     </table>

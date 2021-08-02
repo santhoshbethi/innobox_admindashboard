@@ -181,6 +181,7 @@ export class ApiService {
   }
 
   updateStaticData(data: any) {
+    console.log(data);
     return this.http.post(`${environment.apiUrl}home/updatestaticdata`, data, {
       headers: this.headers,
     });

@@ -29,8 +29,6 @@ export class addwhatwedocounterComponent implements OnInit {
     this.contactForm = this._fb.group({
       title: ["", Validators.required],
       value: ["", Validators.required],
-      // ID: ["", Validators.required],
-
     });
   }
 
@@ -48,9 +46,8 @@ export class addwhatwedocounterComponent implements OnInit {
 
   contactData() {
     const formatData = this.contactForm.value;
-    formatData.ID = this.data.ID;
+    formatData.id = this.data.ID;
     formatData.status = this.data.status;
-    console.log(formatData);
 
     this.api.updateStaticData(formatData).subscribe((response: any) => {
       this.router.navigate(["whatwedocounter"]);

@@ -36,7 +36,6 @@ export class whatwedoCounterComponent {
   getStaticData() {
     this.api.getStaticData().subscribe((response) => {
       let res = JSON.parse(JSON.stringify(response));
-      console.log(res);
       if (res.message) {
         this.rows = res.message;
       } else {
@@ -54,16 +53,14 @@ export class whatwedoCounterComponent {
   updateStatus(items: any, event) {
 
     let status: number;
-    if (event.checked) {
-      status = 0;
-    }
-    else {
+    if (event.checked == true) {
       status = 1;
     }
+    else {
+      status = 0;
+    }
 
-    this.api.updateStaticData({ ID: items.ID, status: status }).subscribe(data => {
-      console.log(data);
-
+    this.api.updateStaticData({ id: items.ID, status: status }).subscribe(data => {
     },
       error => {
         console.log("error");

@@ -35,7 +35,6 @@ export class topImagesComponent {
       let res = JSON.parse(JSON.stringify(response));
 
       if (res.message) {
-        console.log(res)
         this.rows = res.message;
       } else {
         console.log("errror", res);
@@ -44,7 +43,6 @@ export class topImagesComponent {
   }
 
   updateTopImages(data: any) {
-    console.log(data);
     this.router.navigate(['addtopimages']);
     sessionStorage.setItem('data', JSON.stringify(data));
     // sessionStorage.setItem('isEditClicked', 'true');
@@ -58,7 +56,6 @@ export class topImagesComponent {
   }
   updateStatus(items: any, event) {
     let status: number;
-    alert(event.checked)
     if (event.checked == true) {
       status = 1;
     }
@@ -67,10 +64,7 @@ export class topImagesComponent {
     }
 
 
-    this.api.updateTopImages({ id: items.ID, status: status }).subscribe(data => {
-      console.log(data);
-
-    },
+    this.api.updateTopImages({ id: items.ID, status: status }).subscribe(data => { },
       error => {
         console.log("error");
       })
